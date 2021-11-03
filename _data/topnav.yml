@@ -3,8 +3,8 @@
 topnav:
 - title: Topnav
   items:
-    - title: GitHub
-      external_url: https://github.com/tomjoht/documentation-theme-jekyll
+    - title: Ceptre Web Editor
+      external_url: http://microceptre.glitch.me/
     - title: News
       url: /news
 
