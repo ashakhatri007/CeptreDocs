@@ -5,30 +5,20 @@ topnav:
   items:
     - title: Ceptre Web Editor
       external_url: http://microceptre.glitch.me/
-    - title: News
-      url: /news
+    #- title: News
+    #  url: /news
 
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Jekyll Help
+    - title: GitHub Source Codes
       folderitems:
-        - title: Jekyll Talk
-          external_url: https://talk.jekyllrb.com
-        - title: Jekyll documentation
-          external_url: http://jekyllrb.com/docs/home/
-        - title: Jekyll on Stack Overflow
-          external_url: http://stackoverflow.com/questions/tagged/jekyll
-        - title: Jekyll on my blog
-          external_url: http://idratherbewriting.com/category-jekyll/
-    - title: Products
-      folderitems:
-        - title: Jekyll Documentation Theme
-          url: /mydoc_introduction.html
-        - title: Product 1
-          url: /p1_landing_page.html
-        - title: Product 2
-          url: /p2_landing_page.html
+        - title: Ceptre Language GH
+          external_url: https://github.com/chrisamaphone/interactive-lp
+        - title: Ceptre Web Editor GH (NCSU ID required)
+          external_url: https://github.ncsu.edu/acard/microceptre
+        - title: Ceptre documentation GH
+          external_url: https://github.com/ashakhatri007/CeptreDocs
 
 # Copyright 2021 Google LLC
