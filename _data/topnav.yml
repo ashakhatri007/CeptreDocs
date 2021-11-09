@@ -4,30 +4,8 @@ topnav:
 - title: Topnav
   items:
     - title: Ceptre Web Editor
-      external_url: http://microceptre.glitch.me/
-    #- title: News
-    #  url: /news
-
-#Topnav dropdowns
-topnav_dropdowns:
-- title: Topnav dropdowns
-  folders:
-    - title: GitHub Source Codes
-      folderitems:
-        - title: Ceptre Language GH
-          external_url: https://github.com/chrisamaphone/interactive-lp
-        - title: Ceptre Web Editor GH (NCSU ID required)
-          external_url: https://github.ncsu.edu/acard/microceptre
-        - title: Ceptre documentation GH
-          external_url: https://github.com/ashakhatri007/CeptreDocs
-
-    - title: Research papers
-      folderitems:
-        - title: Paper 1
-          external_url: https://github.com/chrisamaphone/interactive-lp
-        - title: Paper 2
-          external_url: https://github.ncsu.edu/acard/microceptre
-        - title: Paper 3
-          external_url: https://github.com/ashakhatri007/CeptreDocs
+      url: /CeptreWebEditor.html
+    - title: Contact Us
+      url: /news
 
 # Copyright 2021 Google LLC

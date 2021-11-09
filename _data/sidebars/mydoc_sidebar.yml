@@ -97,5 +97,21 @@ entries:
       url: /mydoc_lists.html
       output: web, pdf
 
+  - title: Theory
+    output: web, pdf
+
+    folderitems:
+    - title: Paper1
+      url: /mydoc_pages.html
+      output: web, pdf
+
+    - title: Paper2
+      url: /mydoc_posts.html
+      output: web, pdf
+
+    - title: Paper3
+      url: /mydoc_lists.html
+      output: web, pdf
+
   
 # Copyright 2021 Google LLC
