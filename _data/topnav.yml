@@ -5,7 +5,9 @@ topnav:
   items:
     - title: Ceptre Web Editor
       url: /CeptreWebEditor.html
-    - title: Contact Us
-      url: /news
+    - title: People
+      url: /People.html
+    - title: Contact
+      url: /ContactUs.html
 
 # Copyright 2021 Google LLC
