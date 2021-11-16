@@ -35,14 +35,6 @@ entries:
       url: /mydoc_about.html
       output: web, pdf
 
-  - title: Ceptre Web Editor
-    output: web, pdf
-    folderitems:
-
-    - title: Try Ceptre Web Editor
-      url: /CeptreWebEditor.html
-      output: web, pdf
-
   - title: Learn
     output: web, pdf
     folderitems:
@@ -63,6 +55,13 @@ entries:
       url: /mydoc_release_notes_50.html
       output: web, pdf
 
+  - title: Ceptre Web Editor
+    output: web, pdf
+    folderitems:
+
+    - title: Try Ceptre Web Editor
+      url: /CeptreWebEditor.html
+      output: web, pdf
 
   - title: Examples
     output: web, pdf
