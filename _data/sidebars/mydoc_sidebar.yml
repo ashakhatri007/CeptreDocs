@@ -22,7 +22,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: Introduction
       url: /index.html
       output: web, pdf
       type: homepage
@@ -35,16 +35,19 @@ entries:
       url: /mydoc_about.html
       output: web, pdf
 
-
-  - title: Ceptre Web Editor
+  - title: Learn
     output: web, pdf
     folderitems:
 
-    - title: Introduction
-      url: /mydoc_release_notes_60.html
+    - title: Navigation Manual
+      url: /mydoc_release_notes_50.html
       output: web, pdf
 
-    - title: Navigation
+    - title: Quick Start - Ceptre Language
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+    - title: Quick Start - Ceptre Web Editor
       url: /mydoc_release_notes_50.html
       output: web, pdf
 
@@ -52,8 +55,15 @@ entries:
       url: /mydoc_release_notes_50.html
       output: web, pdf
 
+  - title: Ceptre Web Editor
+    output: web, pdf
+    folderitems:
 
-  - title: Tutorials
+    - title: Try Ceptre Web Editor
+      url: /CeptreWebEditor.html
+      output: web, pdf
+
+  - title: Examples
     output: web, pdf
     folderitems:
 
@@ -77,7 +87,7 @@ entries:
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
-  - title: Fundamentals
+  - title: Theory
     output: web, pdf
 
     folderitems:
@@ -92,8 +102,8 @@ entries:
     - title: Lists
       url: /mydoc_lists.html
       output: web, pdf
-
-  - title: Theory
+    
+  - title: Publications
     output: web, pdf
 
     folderitems:
@@ -108,6 +118,20 @@ entries:
     - title: Paper3
       url: /mydoc_lists.html
       output: web, pdf
+
+  - title: Contact Us
+    output: web, pdf
+
+    folderitems:
+    - title: People
+      url: /People.html
+      output: web, pdf
+
+    - title: Survey
+      url: /Survey.html
+      output: web, pdf
+
+   
 
   
 # Copyright 2021 Google LLC
