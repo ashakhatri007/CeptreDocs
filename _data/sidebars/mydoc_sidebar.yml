@@ -28,7 +28,7 @@ entries:
       type: homepage
 
     - title: Ceptre Language
-      url: /mydoc_supported_features.html
+      url: /CeptreLanguage.html
       output: web, pdf
 
     - title: Ceptre Web Editor
