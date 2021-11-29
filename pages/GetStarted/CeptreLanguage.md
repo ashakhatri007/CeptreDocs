@@ -1,98 +1,136 @@
 ---
-title: "The Ceptre programming language"
+title: "The Ceptre Language"
 keywords: ceptre
-tags: [getting_started]
+tags: [introduction]
 sidebar: mydoc_sidebar
-permalink: CeptreLanguage.html
-summary: This page describes in detail the parts of a Ceptre program.
+permalink: index.html
+summary: An overview of the key features of a Ceptre program.
 ---
 
-## Declarations
+To understand the Ceptre language, let's look at an example of a Ceptre program. This program is a 
+representation of the *blocks world*, a common example problem used in AI that consists of stacks 
+of blocks that can be moved.
 
-A Ceptre program begins (TODO: does it have to be in this order?) by declaring _predicates_, 
-_types_, and _objects_ (TODO: terminology?). Predicates are facts about the state of the game 
-world. Objects are entities in the game world; they have properties that are described by 
-predicates. Types are categories of object; they determine what predicates an object can be used 
-with.
-(TODO: bwd?)
-
-Declarations in Ceptre follow the format:
 ```
-<name> : <declaration_type>.
-```
-The possible values of ```<declaration_type>``` are elaborated on below.
+block : type.
 
-### Predicates
+on block block : pred.
+on_table block : pred.
+clear block : pred.
+arm_holding block : pred.
+arm_free : pred.
 
-A predicate is a statement about the state of the game world. A predicate takes 0 or more 
-_arguments_, which are the objects the predicate is making a statement about. A 0-argument 
-(nullary) predicate is a simple statement about the world, not concerning any objects. A 1-argument
-(unary) predicate is a statement about a property of an object, and a predicate with multiple
-arguments is a statement about a relationship between objects.
+stage blocks = {
+pickup_from_block
+  : on X Y * clear X * arm_free -o clear Y * arm_holding X.
 
-Predicates are declared as follows:
-```
-<predicate_name> [<arg_type_1>] [<arg_type_2] [...] : pred.
-```
-By convention, predicate names start with a lowercase letter. The argument types must be types as 
-defined below
+pickup_from_table
+  : on_table X * clear X * arm_free -o arm_holding X.
 
-### Types
+put_on_block
+  : arm_holding X * clear Y -o on X Y * clear X * arm_free.
 
-A type is a set of objects. Types are used to determine what objects a predicate can take as 
-arguments. Types are declared as follows:
-```
-<type_name> : type.
-```
-By convention, type names start with a lowercase letter.
-
-### Objects
-
-An object is an entity in the game world. Every object has a type, and objects can be used as 
-arguments to predicates to describe the game world. Objects are declared as follows:
-```
-<object_name> : <type>.
-```
-By convention, object names start with a lowercase letter.
-(TODO: other ways of defining objects, such as the natural numbers example)
-
-## Initial State
-
-The initial state of the game world is declared as follows:
-```
-context init = {
-    <predicate_1>,
-    <predicate_2>,
-    ...
+put_on_table
+  : arm_holding X -o on_table X * clear X * arm_free.
 }
+#interactive blocks.
+
+a : block.
+b : block.
+c : block.
+
+context init =
+{ on_table a, on_table b, on c a, clear c, clear b, arm_free }
+
+
+#trace _ blocks init.
 ```
-The predicates listed (with arguments) are all those that are true in the initial state of the 
-game.
-(TODO: explain context further)
+
+We'll break it down piece by piece.
+
+## Types
+
+The first line:
+```
+block : type.
+```
+declares a *type* called `block`. A type is a classification of object that exists in the game 
+world.
+
+## Predicates
+
+After the declaration of the `block` type, predicates are declared. A *predicate* is a statement
+about the game world. Predicates can have parameters, which indicate what objects they are making a
+statement about. For example, the line:
+```
+on block block : pred.
+```
+declares a predicate called `on` that expects two `block`s as parameters. This represents the first
+block being on top of the second block. Other predicates are declared in a similar manner. Note 
+that the predicate `arm_free` does not have any parameters. This predicate is a general statement 
+about the game world (specifically, that the player is not holding anything), and does not concern 
+any specific object.
 
 ## Actions
-_Actions_ are what the player can do in the game. An action has a _precondition_ a set of 
-predicates that must be true for the player to perform the action, and a _postcondition_ a set of
-predicates that will hold after the player performs the action. Performing the action removes the
-predicates in the preconditions from the game state and adds the predicates in the postcondition. 
-If a predicate is in both the precondition and postcondition, it is a requirement for the action 
-but is not changed by the action.
 
-An action is declared as follows:
+After the predicates is a block that begins with:
 ```
-<action_name> : <preconditions> -o <postconditions>.
+stage blocks = {
 ```
-The preconditions and postconditions are described as follows:
-```
-<predicate_1> [<arguments>] [* <predicate_2> [<arguments>]] [* <predicate_3> [<arguments>]] [...]
-```
-The arguments can be objects as defined above or they can be variables. Variables are names that 
-can stand in for any object that is of the right type (based on the parameter the variable is used 
-as). Variables are unique within action definitions. Thus, two instances of the variable `A` used 
-in the same action definition must refer to the same object, but instances of `A` used in other 
-action definitions can refer to any object. By convention, variable names start with a capital 
-letter.
+TODO: explain stage
 
-(TODO: stage main)
+Declared inside this block are the *actions* available to the player (TODO: at that stage?). For 
+example:
+```
+pickup_from_block
+  : on X Y * clear X * arm_free -o clear Y * arm_holding X.
+```
+After the name of the action and the colon, there are two lists of predicates separated by the `*` 
+operator. The two lists are separated by the `-o` (called the lollipop or lolli) operator. The 
+first list is the *preconditions* of the action, things that must be true for the action to be 
+available to the player. The second list is the *effects* of the action. In this case, to perform 
+the `pickup_from_block` action, block `X` must be on top of block `Y`, there must not be any block 
+on top of `X`, and the player's arm must be free. After picking up `X`, there is no longer a 
+block on top of `Y` and the player is holding `X`. Note actions remove their preconditions from 
+the game state unless they are explicitly re-added as effects. Thus, performing 
+`pickup_from_block` also implicitly means that `X` is no longer on top of `Y`, that `X` is no 
+longer clear (because we can't put a block on top of a block we're holding), and the player's 
+arm is no longer free.
 
-(TODO: interactive, trace)
+Most action definitions use *variables*, symbols that can stand in for any object of the 
+appropriate type. The type of a variable is determined by the predicates it is used with; in 
+this example, `X` and `Y` both have to be `block`s because `on`, `clear`, `arm_free`, and 
+`arm_holding` accept arguments of type `block`. When the player performs `pickup_from_block`, 
+`X` and `Y` can be any blocks that satisfy the preconditions.
+
+## Making It Interactive
+
+(TODO: need to explain stages more first; what is an example of a stage that isn't interactive?)
+
+## Objects
+
+Next we declare the objects that exist in the game world. The lines:
+```
+a : block.
+b : block.
+c : block.
+```
+declare three `block`s called `a`, `b`, and `c`.
+
+## The State of the World
+
+The next line is
+```
+context init =
+```
+(TODO: explain context)
+
+We call this context `init` because it is the initial state of the game world. The game state is a 
+collection of predicates with their parameters replaces with objects. The line
+```
+{ on_table a, on_table b, on c a, clear c, clear b, arm_free }
+```
+indicates that at the start, `a` is on the table, `b` is on the table and nothing is on top of it,
+`c` is on top of `a` and nothing is on top of it, and the player's arm is free.
+
+(TODO: explain trace)
