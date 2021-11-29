@@ -3,7 +3,7 @@ title: "The Ceptre programming language"
 keywords: ceptre
 tags: [getting_started]
 sidebar: mydoc_sidebar
-permalink: CeptreLanguage.html
+permalink: LanguageReference.html
 summary: This page describes in detail the parts of a Ceptre program.
 ---
 

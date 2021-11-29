@@ -3,7 +3,7 @@ title: "The Ceptre Language"
 keywords: ceptre
 tags: [introduction]
 sidebar: mydoc_sidebar
-permalink: index.html
+permalink: CeptreLanguage.html
 summary: An overview of the key features of a Ceptre program.
 ---
 
