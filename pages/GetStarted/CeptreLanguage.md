@@ -7,6 +7,19 @@ permalink: CeptreLanguage.html
 summary: An overview of the key features of a Ceptre program.
 ---
 
+## Installing Ceptre
+
+You can download the Ceptre command line tool for Windows, macOS, or Linux here: 
+https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0
+
+Alternatively, you can download the source code and find instructions to build it here: 
+https://github.com/chrisamaphone/interactive-lp
+
+To run Ceptre, just run the executable with the source file as an argument. By convention, a 
+Ceptre source code file should end with `.cep`. But what is a Ceptre file? Read on! 
+
+## A Ceptre Program
+
 To understand the Ceptre language, let's look at an example of a Ceptre program. This program is a 
 representation of the *blocks world*, a common example problem used in AI that consists of stacks 
 of blocks that can be moved.
@@ -79,7 +92,7 @@ stage blocks = {
 ```
 TODO: explain stage
 
-Declared inside this block are the *actions* available to the player (TODO: at that stage?). For 
+Declared inside this block are the *actions* available to the player (FIXME: at that stage?). For 
 example:
 ```
 pickup_from_block
@@ -134,3 +147,89 @@ indicates that at the start, `a` is on the table, `b` is on the table and nothin
 `c` is on top of `a` and nothing is on top of it, and the player's arm is free.
 
 (TODO: explain trace)
+
+## Running Ceptre
+
+Now, let's run the Ceptre file. Let's suppose the above file is called `blocks_world.cep`, so it 
+would be run with the command:
+```
+./ceptre-bin blocks_world.cep
+```
+(The exact name of the executable file depends on your operating system.)
+
+After running that, we see this:
+```
+Ceptre!
+block: type.
+on block block: pred.
+on_table block: pred.
+clear block: pred.
+arm_holding block: pred.
+arm_free: pred.
+stage blocks {
+forward chaining rule pickup_from_block with 2 free variables...
+forward chaining rule pickup_from_table with 1 free variables...
+forward chaining rule put_on_block with 2 free variables...
+forward chaining rule put_on_table with 1 free variables...
+}
+#interactive blocks.
+a: block.
+b: block.
+c: block.
+context init { (on_table a), (on_table b), (on c a), (clear c), (clear b), arm_free }
+#trace ...
+
+0: (quiesce)
+1: (pickup_from_table b)
+2: (pickup_from_block c a)
+?-
+```
+That's a lot, so let's break it down.
+
+First, Ceptre introduces itself and then introduces the predicates in this file (as explained 
+above). Next, it introduces the current stage (FIXME: all stages?):
+```
+stage blocks {
+forward chaining rule pickup_from_block with 2 free variables...
+forward chaining rule pickup_from_table with 1 free variables...
+forward chaining rule put_on_block with 2 free variables...
+forward chaining rule put_on_table with 1 free variables...
+}
+```
+This introduces the actions available at this stage. You can read more about what terms like 
+"forward chaining" and "free variables" mean in the (FIXME) section.
+
+After that, Ceptre introduces the objects in our game world and the current state, as described 
+above. Then, we see:
+```
+0: (quiesce)
+1: (pickup_from_table b)
+2: (pickup_from_block c a)
+?-
+```
+These are the actions available to us. `quiesce` means to enter a stable state where no more 
+changes are made. This ends the current execution. Now, recall that in our initial state, block 
+a is on the table, block c is on top of a with nothing on top of it, block b is on the table with 
+nothing on top of it, and the player's hand is free. So the actions available to us are to pick 
+up c off of a or pick up b from the table. Finally, `?-` is our cue to act!
+
+Let's enter `2` to pick up block c from a. Now we see:
+```
+0: (quiesce)
+1: (put_on_table c)
+2: (put_on_block c b)
+3: (put_on_block c a)
+?-
+```
+The game state has been updated to reflect that we are now holding block c and block a now has 
+nothing on top of it. Now, we can put c on the table or on top of a or b, or quiesce. When we enter 
+0 to quiesce, we see something like:
+```
+Final state:
+{(arm_holding c), (clear a), (clear b), (on_table b), (on_table a), (stage blocks)}
+
+Trace: 
+let [x8, x7] = pickup_from_block c a [x3, [x4, [x6, []]]];
+```
+This shows us the state of the game world at the end and a trace of the actions we took. (TODO: 
+explain trace further) 
