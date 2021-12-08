@@ -130,7 +130,7 @@ Lastly, check the box beside the second condition. This will make the key dissap
 
 2.***Leave dungeon*** - This rule requires two Conditions:
 
-    - Locked: Thomas (Element) is in the locked dungeon (trapped).
+    - Locked: Thomas (Element) is in the dungeon (trapped).
     - Equip: Metal key (Element) Thomas (Element).
 
 This option should only appear after Thomas has equipped the metal key, which is why the predicate "equip" is in the conditions.
@@ -138,7 +138,7 @@ Once these conditions are filled, the result of the rule firing would be:
 
     - At: Thomas (Element) is in the Hallway (Rooms).
 
-The remove box of the first condition should be checked, which should remove Thomas from the locked dungoen after the rule is fired.
+The remove box of the first condition should be checked, which should remove Thomas from the dungoen after the rule is fired.
 
 3.***Move*** - Now we finally create the rule to move Thomas between rooms, as well as use the "variable" feature of the Ceptre.
 This rule requires two Conditions:
@@ -147,9 +147,8 @@ This rule requires two Conditions:
     -   Adjacent: L (Rooms) is beside L2 (Rooms).
     
 In the second argument of the Predicate you will want to select the option "New variable".
-A new dialogue box will appear and you'll be able to name the Variable and name it as you wish, in this case we can just named it "L" (to indiate "location").
-A variable means that any element of the set could be filling this field and the rule can still be fired
-This predicate should indicate that Thomas can't move between rooms that aren't beside each other.
+A new dialogue box will appear and you'll be able to name the Variable and name it as you wish, in this case we can just name it "L" (to indicate "location").
+A variable means that any element of the set could be filling this field and the rule can still be fired. This predicate should indicate that Thomas can't move between rooms that aren't beside each other.
 In the second argument of this predicate we will also add a new variable. You can, again, name it as you wish.
 
 Once these conditions are filled, the result of the rule firing would be:
@@ -158,7 +157,7 @@ Once these conditions are filled, the result of the rule firing would be:
 
 In the end you should be able to read this rule as:
 If Thomas is in room L and room L and room L2 are adjacent, then you can move Thomas to room L2.
-The remove box of the first condition should be checked, which should remove Thomas from the original room (as they cannot be in two rooms at the same time
+The remove box of the first condition should be checked, which should remove Thomas from the original room (as he cannot be in two rooms at the same time)
 
 4.***Pick up golden key*** - This rule is very simliar to the one in the first one, the only difference being that the key is in a different room.
 It requires two Conditions:
@@ -189,7 +188,7 @@ Lastly, check the box beside the first condition. This will remove Thomas from t
 
 
 
-6.***Take keypad code*** - Now, this is the last item Thomas will need to collect to be able to escape.
+6.***Take metal key*** - Now, this is the last item Thomas will need to collect to be able to escape.
 It needs two Conditions:
 
     - Locked: Thomas (Element) is in the secret room (trapped)
@@ -197,10 +196,10 @@ It needs two Conditions:
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    - Equip: Keypad code (Element) Thomas (Element).
+    - Equip: Metal key (Element) Thomas (Element).
 
 
-And finally, check the box to remove the second condition (this would mean that after the rule is fired the keypad code will disappear from the room as Thomas has equipped it.)
+And finally, check the box to remove the second condition (this would mean that after the rule is fired the metal key will disappear from the room as Thomas has equipped it.)
 
 
 
@@ -209,7 +208,7 @@ It needs only one Condition:
 
     - Locked: Thomas (Element) is in the secret room (trapped)
 
-The result would simply take Thomas back to the home library:
+The result would simply take Thomas back to the master bedroom:
 
     - At: Thomas (Element) is in the the master bedroom (Rooms).
 
@@ -226,11 +225,37 @@ It needs two Conditions:
     - At: Thomas (Element) is in the the main room (Rooms).
     - Equip: Keypad code (Element) Thomas (Element).
 
-The result would finally put Thomas on their way home, wherever that is:
+The result would finally put Thomas on his way home, wherever that is:
 
     - At: Thomas (Element) is on their road home (Rooms).
 
 
 And lastly, check the box next to the first condition to remove it, removing Thomas from the creepy house.
 
+Ceptre text based code:
+```
+stage main = { 
 
+pick_up_metal_key : locked thomas dungeon * locked metal_key dungeon -o locked thomas dungeon * equip metal_key thomas * ().
+
+leave_dungeon : locked thomas dungeon * equip metal_key thomas -o equip metal_key thomas * at thomas hallway * ().
+
+move : at thomas L * adjacent L L2 -o adjacent L L2 * at thomas L2 * ().
+
+pick_up_golden_key : at thomas master_bedroom * at golden_key master_bedroom -o at thomas master_bedroom * equip golden_key thomas * ().
+
+take_keypad_code : locked thomas secret_room * locked metal_key secret_room -o locked thomas secret_room * equip metal_key thomas * ().
+
+enter_secret_room : at thomas master_bedroom * equip golden_key thomas -o equip golden_key thomas * locked thomas secret_room * ().
+
+leave_secret_room : locked thomas secret_room -o at thomas master_bedroom * ().
+
+leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal_key thomas * at thomas road_home * ().
+
+}
+```
+
+Ceptre Web editor simulation for initial 3 rules: 
+<video width = "650" controls>
+    <source src = "">
+</video>
