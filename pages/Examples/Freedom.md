@@ -95,9 +95,10 @@ equip elements elements : pred.
 adjacent rooms rooms : pred.
 
 ```
+
 Cepter Web Editor simulation :
 
-
+https://user-images.githubusercontent.com/42487202/145281698-cab4c812-1f37-4517-ab5b-c6aa63c74442.mov
 
 
 
