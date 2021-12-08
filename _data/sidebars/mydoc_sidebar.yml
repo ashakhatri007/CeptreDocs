@@ -87,7 +87,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Freedom
+    - title: Escape the Castle
       url: /Freedom.html
       output: web, pdf
 
