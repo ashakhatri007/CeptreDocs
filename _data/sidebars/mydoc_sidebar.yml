@@ -99,10 +99,6 @@ entries:
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
-    - title: Escape Castle
-      url: /mydoc_install_jekyll_on_mac.html
-      output: web, pdf
-
   - title: Theory
     output: web, pdf
 
