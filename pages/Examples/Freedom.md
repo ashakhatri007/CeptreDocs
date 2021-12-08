@@ -122,7 +122,7 @@ As we saw in the map during Step 1, we know that there is a jey Thomas will need
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    Equip: metal key (Element) Thomas (Element).
+    - Equip: metal key (Element) Thomas (Element).
 
 This should roughly read as Thomas having equipped the metal key.
 
