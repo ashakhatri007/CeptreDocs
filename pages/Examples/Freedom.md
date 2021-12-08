@@ -28,6 +28,30 @@ Now we will add the elements we saw in the concept into the project. To start wi
  2. rooms - hallway, home_library, master_bedroom, main_room, road_home (It comprises of all the rooms that Thomas will be able to move back and forth as well as interact with the items in them)
  3. trapped - dungeon, secret room (It comprises of all the rooms that Thomas can't interact with until he use the respective key)
 
+ Cepter text based code:
+ ```
+ numbers : type.
+
+elements : type.
+thomas : elements.
+metal_key : elements.
+golden_key : elements.
+
+rooms : type.
+hallway : rooms.
+home_library : rooms.
+master_bedroom : rooms.
+main_room : rooms.
+road_home : rooms.
+
+trapped : type.
+dungeon : trapped.
+secret_room : trapped.
+
+```
+
+Cepter Web Editor simulation :
+
 https://user-images.githubusercontent.com/42487202/145275866-9cdb9269-a5a4-44bf-9f7e-4409f88ab016.mp4
 
 
