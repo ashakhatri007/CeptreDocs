@@ -253,9 +253,10 @@ leave_secret_room : locked thomas secret_room -o at thomas master_bedroom * ().
 leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal_key thomas * at thomas road_home * ().
 
 }
+
 ```
 
 Ceptre Web editor simulation for initial 3 rules: 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/145291901-2f324f5e-a0ac-4a84-b60f-f4169baa26a2.mov">
 </video>
