@@ -56,32 +56,48 @@ https://user-images.githubusercontent.com/42487202/145275866-9cdb9269-a5a4-44bf-
 
 ## Add Predicates
 
-In this example we have 4 predicates:
+In this example we have 4 predicates, note that we lock every predicate after definition so that we dont edit them errorneously post definition:
 
 1. Locked - As the name suggests, this state should represent an element being in a room that they can't get out.
 It is composed of two arguments:
 
-- Element: A character or an item
-- Trapped: A room that cannot be interacted until Thomas has a key.
+    - Element: A character or an item
+    - Trapped: A room that cannot be interacted until Thomas has a key.
 
 
 2. At - This Predicate is similar to the previous one as they both indicate the location of an element, however in this one the elements can move between the rooms.
 It is composed of two arguments:
 
-- Element: A character or an item.
-- Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
+    - Element: A character or an item.
+    - Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
 
 
 3. Equip - In this world we want Thomas to be able to pick up and equip elements that they can use.
 It is composed of two arguments:
 
-- Element: A character or an item. Once we make the rules this element will be Thomas.
-- Element: A character or an item. Once we make the rules this element will be the items that Thomas can pick up.
+    - Element: A character or an item. Once we make the rules this element will be Thomas.
+    - Element: A character or an item. Once we make the rules this element will be the items that Thomas can pick up.
 
 
 4. Adjacent - This Predicate will indicate which rooms are beside each other and once we make the Rules it will allows us to make Thomas only be able to move between rooms that are beside each other.
 It is composed of two arguments, however they are the same Sets:
 
-- Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
+    - Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
+
+Cepter text based code:
+```
+locked elements trapped : pred.
+
+at elements rooms : pred.
+
+equip elements elements : pred.
+
+adjacent rooms rooms : pred.
+
+```
+Cepter Web Editor simulation :
+
+
+
 
 
