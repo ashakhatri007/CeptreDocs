@@ -309,3 +309,27 @@ Ceptre Web editor simulation:
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/145315795-95935cb0-f0f0-436e-ad87-9632c5bbdac1.mov">
 </video>
+
+
+Similary we will be putting all the elements in their place, however we know that we will be able to change their original states.
+
+Ceptre text base code:
+
+```
+context init = 
+{
+    adjacent hallway home_library, 
+    adjacent home_library hallway,
+    adjacent home_library master_bedroom,
+    adjacent master_bedroom home_library,
+    adjacent master_bedroom main_room,
+    adjacent main_room master_bedroom,
+    at golden_key master_bedroom, 
+    locked thomas dungeon,
+    locked metal_key dungeon,
+}.
+```
+Ceptre Web editor simulation: 
+<video width = "650" controls>
+    <source src = "https://user-images.githubusercontent.com/42487202/145315795-95935cb0-f0f0-436e-ad87-9632c5bbdac1.mov">
+</video>
