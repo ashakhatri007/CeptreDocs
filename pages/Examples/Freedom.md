@@ -112,8 +112,8 @@ First, navigate to the "Add rule" button and select it. A new menu should appear
 After that select the "+" to Add a New condition or effect.For this example we will be making 8 rules. In reality it is very unlikely that you will be able to know the exact number of rules that you will be needed, which is when the Trial and Error method will most likely be the most useful.
 
 
-Since the "game" will begin with Thomas being locked up in the "locked_dungeon", it would be best to make the rules in the order the player will most likey need them.
-As we saw in the map during Step 1, we know that there is a jey Thomas will need to escape the dungeon, so we'll start with that.
+Since the "game" will begin with Thomas being locked up in the "dungeon", it would be best to make the rules in the order the player will most likey need them.
+As we saw in the map of concept, we know that there is a key Thomas will need to escape the dungeon, so we'll start with that.
 
 1.***Pick up metal key*** - This rule requires two Conditions; which, as we covered before, are the Predicates we previously made:
 
@@ -122,7 +122,7 @@ As we saw in the map during Step 1, we know that there is a jey Thomas will need
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    - Equip: metal key (Element) Thomas (Element).
+    - Equip: Metal key (Element) Thomas (Element).
 
 This should roughly read as Thomas having equipped the metal key.
 
@@ -156,10 +156,10 @@ Once these conditions are filled, the result of the rule firing would be:
     - At: Thomas (Element) is in room L2 (Rooms).
 
 In the end you should be able to read this rule as:
-If Thomas is in room L and room L and room L2 are adjacent, then you can move Thomas to room L2.
+If Thomas is in room L, room L and room L2 are adjacent, then you can move Thomas to room L2.
 The remove box of the first condition should be checked, which should remove Thomas from the original room (as he cannot be in two rooms at the same time)
 
-4.***Pick up golden key*** - This rule is very simliar to the one in the first one, the only difference being that the key is in a different room.
+4.***Pick up golden key*** - This rule is very similar to the one in the first one, the only difference being that the key is in a different room.
 It requires two Conditions:
 
     - At: Thomas (Element) is in the master bedroom (Rooms).
@@ -192,7 +192,7 @@ Lastly, check the box beside the first condition. This will remove Thomas from t
 It needs two Conditions:
 
     - Locked: Thomas (Element) is in the secret room (trapped)
-    - Locked: Keypad code (Element) is in the secret room (trapped)
+    - Locked: Metal key (Element) is in the secret room (trapped)
 
 Once these conditions are filled, the result of the rule firing would be:
 
@@ -217,9 +217,7 @@ And lastly, check the box next to the condition to remove it. This would delete 
 
 
 
-8.***Leave creepy house***
-
-And with this rule we have reached what would be the end of the game.
+8.***Leave creepy house*** - And with this rule we have reached what would be the end of the game.
 It needs two Conditions:
 
     - At: Thomas (Element) is in the the main room (Rooms).
@@ -257,6 +255,57 @@ leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal
 ```
 
 Ceptre Web editor simulation for initial 3 rules: 
+<video width = "650" controls>
+    <source src = "https://user-images.githubusercontent.com/42487202/145291901-2f324f5e-a0ac-4a84-b60f-f4169baa26a2.mov">
+</video>
+
+
+## Initial State
+
+The Initial State is the state of execution your program will begin in.
+In this example you only have to think of it in two ways:
+
+The building of your map, which will most likely stay stagnant.
+In this case, the rooms (including the locked ones) will not change at all throughout all the "playthrough."
+
+The first position of your elements. These will change in the playthroughs, but when you start the "game" again these elements will go back to the position you put them in.
+In this case, the items and Thomas will all start in specific positions, however they will be moved or mutated in the game. Once you start the game again Thomas and the items will go back to their first positions.
+With that in mind we will start by making the map.
+We'll start by adding the adjacent rooms.
+
+Since we already have some rules to move into certain places (Locked rooms and the exit) we do not have to add them here; however we do need to add the rest of the rooms since the rule that applies to them uses variables (The Move rule).
+
+First we'll select the button "Add Atom."
+An atom is just the predicate that we will be using for the Initial State.
+
+For this whole step we will be using the "Adjacent" predicate.
+
+Next we will insert the arguments:
+
+    - Adjacent: Hallway (Rooms) Home library (Rooms).
+
+Note:
+
+This only means that Thomas will be able to go into the Home library, but not from the Home library to the Hallway. To allow them to go back and forward we need to do this rule again, just switching the arguments.
+
+
+To save time we should also use the button "Duplicate Atom" which, as the name suggests, will make a copy of the atom.
+This way we only have to switch the arguments without having to select the predicate again.
+
+Ceptre text base code:
+
+```
+context init = 
+{
+    adjacent hallway home_library, 
+    adjacent home_library hallway,
+    adjacent home_library master_bedroom,
+    adjacent master_bedroom home_library,
+    adjacent master_bedroom main_room,
+    adjacent main_room master_bedroom,
+}.
+```
+Ceptre Web editor simulation: 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/145291901-2f324f5e-a0ac-4a84-b60f-f4169baa26a2.mov">
 </video>
