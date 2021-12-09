@@ -334,3 +334,13 @@ Ceptre Web editor simulation:
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/145320882-b3f5f763-7846-4c66-a69f-d317fe957dc5.mov">
 </video>
+
+## Execution
+
+Now we can finally start our prototype and see if it works.
+The first thing we need to do is click on "Start Execution", because otherwise the fireable rules won't appear in the box in the Execution tab.
+
+Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
+
+
+
