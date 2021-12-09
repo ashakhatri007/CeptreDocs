@@ -328,8 +328,9 @@ context init =
     locked thomas dungeon,
     locked metal_key dungeon,
 }.
+
 ```
 Ceptre Web editor simulation: 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145315795-95935cb0-f0f0-436e-ad87-9632c5bbdac1.mov">
+    <source src = "https://user-images.githubusercontent.com/42487202/145320882-b3f5f763-7846-4c66-a69f-d317fe957dc5.mov">
 </video>
