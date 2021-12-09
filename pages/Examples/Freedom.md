@@ -307,5 +307,5 @@ context init =
 ```
 Ceptre Web editor simulation: 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145291901-2f324f5e-a0ac-4a84-b60f-f4169baa26a2.mov">
+    <source src = "https://user-images.githubusercontent.com/42487202/145315795-95935cb0-f0f0-436e-ad87-9632c5bbdac1.mov">
 </video>
