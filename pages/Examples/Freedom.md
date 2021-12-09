@@ -10,7 +10,7 @@ folder: Examples
 
 ## Concept
 
-For escape the castle, we are going to make a map of game world in which main character "Thomas" is trying to escape a castle by collecting some items. In this rough concept we already have an idea of what the rules of this world will be:
+To escape the castle, we are going to make a map of game world in which main character "Thomas" is trying to escape a castle by collecting some items. In this rough concept we already have an idea of what the rules of this world will be:
 Thomas will only be able to move from one room to another if the rooms are beside each other and if the entrance is open.
 We also know which items are needed to be able to advance in the "game", where they are and where they will be needed.
 
@@ -138,7 +138,7 @@ Once these conditions are filled, the result of the rule firing would be:
 
     - At: Thomas (Element) is in the Hallway (Rooms).
 
-The remove box of the first condition should be checked, which should remove Thomas from the dungoen after the rule is fired.
+The remove box of the first condition should be checked, which should remove Thomas from the dungeon after the rule is fired.
 
 3.***Move*** - Now we finally create the rule to move Thomas between rooms, as well as use the "variable" feature of the Ceptre.
 This rule requires two Conditions:
@@ -311,7 +311,7 @@ Ceptre Web editor simulation:
 </video>
 
 
-Similary we will be putting all the elements in their place, however we know that we will be able to change their original states.
+Similarly we will be putting all the elements in their place, however we know that we will be able to change their original states.
 
 Ceptre text base code:
 
