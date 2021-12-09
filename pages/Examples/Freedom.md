@@ -343,4 +343,7 @@ The first thing we need to do is click on "Start Execution", because otherwise t
 Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
 
 
+![image](https://user-images.githubusercontent.com/42487202/145321472-1ee3363e-8286-483f-b3eb-8765bf774b23.png)
+
+![image](https://user-images.githubusercontent.com/42487202/145321493-b222eeef-fa26-4407-b57a-c319a5d81602.png)
 
