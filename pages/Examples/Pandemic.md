@@ -202,9 +202,7 @@ build : turn Player * at Player City * hand Player Card * city_card City Card -o
 fly : turn P * at P C * hand P CityCard * city_card C' CityCard -o city_card C' CityCard * at P C' * ().
 
 treat : turn Player * at Player City * disease City -o at Player City * ().
-
 }
-
 ```
 
 Ceptre Web editor simulation for initial 3 rules: 
