@@ -52,8 +52,9 @@ delhi_card : city_card.
 Cepter Web Editor simulation :
 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146027878-bcd65679-0a2c-4e7e-85ac-75c62a58e79a.mov">
 </video>
+
 
 ## Add Predicates
 
