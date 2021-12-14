@@ -52,7 +52,7 @@ delhi_card : city_card.
 Cepter Web Editor simulation :
 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146030086-df9fd81d-7686-47a4-a0d1-5c17eb4ab813.mov">
 </video>
 
 
