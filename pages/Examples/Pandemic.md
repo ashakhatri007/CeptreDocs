@@ -254,7 +254,7 @@ context init =
     adjacent delhi kinshasa,
     adjacent delhi los_angeles,
     adjacent los_angeles delhi
-}.
+}
 
 ```
 
@@ -291,7 +291,7 @@ context init =
     turn player_a,
     hand player_a bogota_card,
     hand player_a los_angeles_card
-}.
+}
 
 ```
 Ceptre Web editor simulation: 

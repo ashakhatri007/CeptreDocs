@@ -284,10 +284,9 @@ Next we will insert the arguments:
 
     - Adjacent: Hallway (Rooms) Home library (Rooms).
 
-Note:
 
-This only means that Thomas will be able to go into the Home library, but not from the Home library to the Hallway. To allow them to go back and forward we need to do this rule again, just switching the arguments.
 
+{% include note.html content="This only means that Thomas will be able to go into the Home library, but not from the Home library to the Hallway. To allow them to go back and forward we need to do this rule again, just switching the arguments." %}
 
 To save time we should also use the button "Duplicate Atom" which, as the name suggests, will make a copy of the atom.
 This way we only have to switch the arguments without having to select the predicate again.
@@ -303,7 +302,7 @@ context init =
     adjacent master_bedroom home_library,
     adjacent master_bedroom main_room,
     adjacent main_room master_bedroom
-}.
+}
 ```
 Ceptre Web editor simulation: 
 <video width = "650" controls>
@@ -327,7 +326,7 @@ context init =
     at golden_key master_bedroom, 
     locked thomas dungeon,
     locked metal_key dungeon
-}.
+}
 
 ```
 Ceptre Web editor simulation: 
