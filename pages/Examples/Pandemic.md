@@ -256,9 +256,10 @@ context init =
     adjacent los_angeles delhi
 }.
 ```
+
 Ceptre Web editor simulation: 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145315795-95935cb0-f0f0-436e-ad87-9632c5bbdac1.mov">
+    <source src = "https://user-images.githubusercontent.com/42487202/146066796-4d8a1549-d3cd-4f99-9b66-c06b220a8953.mov">
 </video>
 
 
