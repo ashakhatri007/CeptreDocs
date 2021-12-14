@@ -92,7 +92,7 @@ entries:
       output: web, pdf
 
     - title: Blocks world
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /BlocksWorld.html
       output: web, pdf
 
     - title: Pandemic
