@@ -22,17 +22,17 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Introduction to Ceptre language
+    - title: Introduction
       url: /index.html
       output: web, pdf
       type: homepage
 
     - title: Ceptre Text based
-      url: /mydoc_supported_features.html
+      url: /CeptreTextBased.html
       output: web, pdf
 
-    - title: Ceptre Web Editor
-      url: /mydoc_about.html
+    - title: Ceptre Web Editor based
+      url: /CeptreWebEditorBased.html
       output: web, pdf
 
   - title: Learn
@@ -40,31 +40,31 @@ entries:
     folderitems:
 
     - title: Types
-      url: /mydoc_release_notes_50.html
+      url: /Types.html
       output: web, pdf
 
     - title: Objects
-      url: /mydoc_release_notes_50.html
+      url: /Objects.html
       output: web, pdf
 
     - title: Predicates
-      url: /mydoc_release_notes_50.html
+      url: /Predicates.html
       output: web, pdf
 
     - title: Actions
-      url: /mydoc_release_notes_50.html
+      url: /Actions.html
       output: web, pdf
 
     - title: Rules
-      url: /mydoc_release_notes_50.html
+      url: /Rules.html
       output: web, pdf
     
     - title: Stages
-      url: /mydoc_release_notes_50.html
+      url: /Stages.html
       output: web, pdf
 
     - title: Game state
-      url: /mydoc_release_notes_50.html
+      url: /GameState.html
       output: web, pdf
 
   - title: Ceptre Web Editor
@@ -73,14 +73,6 @@ entries:
 
     - title: Try Ceptre Web Editor
       url: /CeptreWebEditor.html
-      output: web, pdf
-
-    - title: Web Editor Navigation Manual
-      url: 
-      output: web, pdf
-
-    - title: Web Editor Accessibility
-      url: 
       output: web, pdf
 
   - title: Examples
@@ -104,47 +96,39 @@ entries:
 
     folderitems:
     - title: Formal definitions
-      url: /mydoc_pages.html
+      url: /FormalDefinitions.html
       output: web, pdf
 
     - title: Multisets
-      url: /mydoc_posts.html
+      url: /Multisets.html
       output: web, pdf
 
     - title: Game mechanics
-      url: /mydoc_lists.html
+      url: /GameMechanics.html
       output: web, pdf
 
     - title: Transitions
-      url: /mydoc_pages.html
+      url: /Transitions.html
       output: web, pdf
 
     - title: Execution trace
-      url: /mydoc_posts.html
+      url: /ExecutionTrace.html
       output: web, pdf
 
     - title: Term quantification
-      url: /mydoc_lists.html
+      url: /TermQuantification.html
       output: web, pdf
 
     - title: Substitution
-      url: /mydoc_lists.html
+      url: /Substitution.html
       output: web, pdf
     
   - title: Publications
     output: web, pdf
 
     folderitems:
-    - title: Paper1
-      url: /mydoc_pages.html
-      output: web, pdf
-
-    - title: Paper2
-      url: /mydoc_posts.html
-      output: web, pdf
-
-    - title: Paper3
-      url: /mydoc_lists.html
+    - title:  Research Papers
+      url: /ResearchPapers.html
       output: web, pdf
 
   - title: Contact Us
