@@ -77,5 +77,3 @@ Predicates can represent additional information about types,
 or information which is true in the world. For example, in
 an ecological predator/prey model, there could be a predicate
 rabbit age, denoting a rabbit’s age.
-
-{% include links.html %}

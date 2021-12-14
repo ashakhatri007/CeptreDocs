@@ -27,32 +27,44 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Ceptre Language
-      url: /mydoc_supported_features.html
+    - title: Ceptre Text based
+      url: /CeptreTextBased.html
       output: web, pdf
 
-    - title: Ceptre Web Editor
-      url: /mydoc_about.html
+    - title: Ceptre Web Editor based
+      url: /CeptreWebEditorBased.html
       output: web, pdf
 
   - title: Learn
     output: web, pdf
     folderitems:
 
-    - title: Navigation Manual
-      url: /mydoc_release_notes_50.html
+    - title: Types
+      url: /Types.html
       output: web, pdf
 
-    - title: Quick Start - Ceptre Language
-      url: /mydoc_release_notes_50.html
+    - title: Objects
+      url: /Objects.html
       output: web, pdf
 
-    - title: Quick Start - Ceptre Web Editor
-      url: /mydoc_release_notes_50.html
+    - title: Predicates
+      url: /Predicates.html
       output: web, pdf
 
-    - title: Accessibility
-      url: /mydoc_release_notes_50.html
+    - title: Actions
+      url: /Actions.html
+      output: web, pdf
+
+    - title: Rules
+      url: /Rules.html
+      output: web, pdf
+    
+    - title: Stages
+      url: /Stages.html
+      output: web, pdf
+
+    - title: Game state
+      url: /GameState.html
       output: web, pdf
 
   - title: Ceptre Web Editor
@@ -67,56 +79,56 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Hello World
-      url: /mydoc_about_ruby_gems_etc.html
-      output: web, pdf
-
-    - title: Minecraft
-      url: /mydoc_install_jekyll_on_mac.html
+    - title: Escape the Castle
+      url: /Freedom.html
       output: web, pdf
 
     - title: Blocks world
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /BlocksWorld.html
       output: web, pdf
 
     - title: Pandemic
-      url: /mydoc_install_jekyll_on_mac.html
-      output: web, pdf
-
-    - title: Escape Castle
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /Pandemic.html
       output: web, pdf
 
   - title: Theory
     output: web, pdf
 
     folderitems:
-    - title: Pages
-      url: /mydoc_pages.html
+    - title: Formal definitions
+      url: /FormalDefinitions.html
       output: web, pdf
 
-    - title: Posts
-      url: /mydoc_posts.html
+    - title: Multisets
+      url: /Multisets.html
       output: web, pdf
 
-    - title: Lists
-      url: /mydoc_lists.html
+    - title: Game mechanics
+      url: /GameMechanics.html
+      output: web, pdf
+
+    - title: Transitions
+      url: /Transitions.html
+      output: web, pdf
+
+    - title: Execution trace
+      url: /ExecutionTrace.html
+      output: web, pdf
+
+    - title: Term quantification
+      url: /TermQuantification.html
+      output: web, pdf
+
+    - title: Substitution
+      url: /Substitution.html
       output: web, pdf
     
   - title: Publications
     output: web, pdf
 
     folderitems:
-    - title: Paper1
-      url: /mydoc_pages.html
-      output: web, pdf
-
-    - title: Paper2
-      url: /mydoc_posts.html
-      output: web, pdf
-
-    - title: Paper3
-      url: /mydoc_lists.html
+    - title:  Research Papers
+      url: /ResearchPapers.html
       output: web, pdf
 
   - title: Contact Us
