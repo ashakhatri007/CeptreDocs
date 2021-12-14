@@ -109,13 +109,13 @@ Cepter Web Editor simulation :
 Now we will be adding the rules in which our world will be working on.
 First, navigate to the "Add rule" button and select it. A new menu should appear.
 
-After that select the "+" to Add a New condition or effect.For this example we will be making 8 rules. In reality it is very unlikely that you will be able to know the exact number of rules that you will be needed, which is when the Trial and Error method will most likely be the most useful.
+After that select the "+" to Add a New condition or effect. For this example we will be making 8 rules. In reality, it is very unlikely that you will be able to know the exact number of rules that you will be needed, which is when the Trial and Error method will most likely be the most useful.
 
 
-Since the "game" will begin with Thomas being locked up in the "dungeon", it would be best to make the rules in the order the player will most likey need them.
+Since the "game" will begin with Thomas being locked up in the "dungeon", it would be best to make the rules in the order the player will most likely need them.
 As we saw in the map of concept, we know that there is a key Thomas will need to escape the dungeon, so we'll start with that.
 
-1.***Pick up metal key*** - This rule requires two Conditions; which, as we covered before, are the Predicates we previously made:
+1. ***Pick up metal key*** - This rule requires two Conditions; which, as we covered before, are the Predicates we previously made:
 
     - Locked: Thomas (Element) is in the locked dungeon (trapped).
     - Locked: Metal key (Element) is in the locked dungeon (trapped).
@@ -126,9 +126,9 @@ Once these conditions are filled, the result of the rule firing would be:
 
 This should roughly read as Thomas having equipped the metal key.
 
-Lastly, check the box beside the second condition. This will make the key dissappear from the locked dungeon, since Thomas has already equipped it.
+Lastly, check the box beside the second condition. This will make the key disappear from the locked dungeon, since Thomas has already equipped it.
 
-2.***Leave dungeon*** - This rule requires two Conditions:
+2. ***Leave dungeon*** - This rule requires two Conditions:
 
     - Locked: Thomas (Element) is in the dungeon (trapped).
     - Equip: Metal key (Element) Thomas (Element).
@@ -140,14 +140,14 @@ Once these conditions are filled, the result of the rule firing would be:
 
 The remove box of the first condition should be checked, which should remove Thomas from the dungeon after the rule is fired.
 
-3.***Move*** - Now we finally create the rule to move Thomas between rooms, as well as use the "variable" feature of the Ceptre.
+3. ***Move*** - Now we finally create the rule to move Thomas between rooms, as well as use the "variable" feature of the Ceptre.
 This rule requires two Conditions:
 
     -   At: Thomas (Element) is in room L (Rooms).
     -   Adjacent: L (Rooms) is beside L2 (Rooms).
     
 In the second argument of the Predicate you will want to select the option "New variable".
-A new dialogue box will appear and you'll be able to name the Variable and name it as you wish, in this case we can just name it "L" (to indicate "location").
+A new dialogue box will appear, and you'll be able to name the Variable and name it as you wish, in this case we can just name it "L" (to indicate "location").
 A variable means that any element of the set could be filling this field and the rule can still be fired. This predicate should indicate that Thomas can't move between rooms that aren't beside each other.
 In the second argument of this predicate we will also add a new variable. You can, again, name it as you wish.
 
@@ -159,7 +159,7 @@ In the end you should be able to read this rule as:
 If Thomas is in room L, room L and room L2 are adjacent, then you can move Thomas to room L2.
 The remove box of the first condition should be checked, which should remove Thomas from the original room (as he cannot be in two rooms at the same time)
 
-4.***Pick up golden key*** - This rule is very similar to the one in the first one, the only difference being that the key is in a different room.
+4. ***Pick up golden key*** - This rule is very similar to the one in the first one, the only difference being that the key is in a different room.
 It requires two Conditions:
 
     - At: Thomas (Element) is in the master bedroom (Rooms).
@@ -171,12 +171,12 @@ Once these conditions are filled, the result of the rule firing would be:
 
 This should roughly read as Thomas having equipped the golden key.
 
-Lastly, check the box beside the second condition. This will make the key dissappear from the master bedroom, since Thomas has already equipped it.
+Lastly, check the box beside the second condition. This will make the key disappear from the master bedroom, since Thomas has already equipped it.
 
-5.***Enter secret room*** - This rule can be fired after Thomas equips the golden key since we don't want them to be able to enter the secret room without said key.
+5. ***Enter secret room*** - This rule can be fired after Thomas equips the golden key since we don't want them to be able to enter the secret room without said key.
 It requires two Conditions:
 
-    - At: Thomas (Element) is in the the master bedroom (Rooms).
+    - At: Thomas (Element) is in the master bedroom (Rooms).
     - Equip: Golden key (Element) Thomas (Element).
 
 Once these conditions are filled, the result of the rule firing would be:
@@ -188,7 +188,7 @@ Lastly, check the box beside the first condition. This will remove Thomas from t
 
 
 
-6.***Take metal key*** - Now, this is the last item Thomas will need to collect to be able to escape.
+6. ***Take metal key*** - Now, this is the last item Thomas will need to collect to be able to escape.
 It needs two Conditions:
 
     - Locked: Thomas (Element) is in the secret room (trapped)
@@ -203,7 +203,7 @@ And finally, check the box to remove the second condition (this would mean that 
 
 
 
-7.***Leave secret room*** - This rule is much simpler than the other ones since it only needs Thomas to be in the secret room without any other prerequisite.
+7. ***Leave secret room*** - This rule is much simpler than the other ones since it only needs Thomas to be in the secret room without any other prerequisite.
 It needs only one Condition:
 
     - Locked: Thomas (Element) is in the secret room (trapped)
@@ -217,10 +217,10 @@ And lastly, check the box next to the condition to remove it. This would delete 
 
 
 
-8.***Leave creepy house*** - And with this rule we have reached what would be the end of the game.
+8. ***Leave creepy house*** - And with this rule we have reached what would be the end of the game.
 It needs two Conditions:
 
-    - At: Thomas (Element) is in the the main room (Rooms).
+    - At: Thomas (Element) is in the main room (Rooms).
     - Equip: Keypad code (Element) Thomas (Element).
 
 The result would finally put Thomas on his way home, wherever that is:
@@ -311,7 +311,7 @@ Ceptre Web editor simulation:
 </video>
 
 
-Similarly we will be putting all the elements in their place, however we know that we will be able to change their original states.
+Similarly, we will be putting all the elements in their place, however we know that we will be able to change their original states.
 
 Ceptre text base code:
 

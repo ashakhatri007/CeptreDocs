@@ -130,124 +130,64 @@ Cepter Web Editor simulation :
 Now we will be adding the rules in which our world will be working on.
 First, navigate to the "Add rule" button and select it. A new menu should appear.
 
-After that select the "+" to Add a New condition or effect.For this example we will be making 8 rules. In reality it is very unlikely that you will be able to know the exact number of rules that you will be needed, which is when the Trial and Error method will most likely be the most useful.
+After that select the "+" to Add a New condition or effect. For this example we will be making 4 rules. In reality, it is very unlikely that you will be able to know the exact number of rules that you will be needed, which is when the Trial and Error method will most likely be the most useful.
 
 
-Since the "game" will begin with Thomas being locked up in the "dungeon", it would be best to make the rules in the order the player will most likey need them.
-As we saw in the map of concept, we know that there is a key Thomas will need to escape the dungeon, so we'll start with that.
+1. ***drive*** - This rule requires three conditions which, as we covered before, are the Predicates we previously made:
 
-1.***Pick up metal key*** - This rule requires two Conditions; which, as we covered before, are the Predicates we previously made:
-
-    - Locked: Thomas (Element) is in the locked dungeon (trapped).
-    - Locked: Metal key (Element) is in the locked dungeon (trapped).
+    - turn : It is current players turn.
+    - at : Current player is located at city.
+    - adjacent : Given two cities are adjacent to each other.
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    - Equip: Metal key (Element) Thomas (Element).
+    - at: Current player reaches the adjacent city.
 
-This should roughly read as Thomas having equipped the metal key.
+This should roughly read as player have driven to a city which is adjacent to its current location.
 
-Lastly, check the box beside the second condition. This will make the key dissappear from the locked dungeon, since Thomas has already equipped it.
+Lastly, check the box beside the first and second condition. This will make sure that turn is passed to other player and current player is no longer at its previous location.
 
-2.***Leave dungeon*** - This rule requires two Conditions:
+2. ***build*** - This rule requires four conditions which, as we covered before, are the Predicates we previously made:
 
-    - Locked: Thomas (Element) is in the dungeon (trapped).
-    - Equip: Metal key (Element) Thomas (Element).
-
-This option should only appear after Thomas has equipped the metal key, which is why the predicate "equip" is in the conditions.
-Once these conditions are filled, the result of the rule firing would be:
-
-    - At: Thomas (Element) is in the Hallway (Rooms).
-
-The remove box of the first condition should be checked, which should remove Thomas from the dungeon after the rule is fired.
-
-3.***Move*** - Now we finally create the rule to move Thomas between rooms, as well as use the "variable" feature of the Ceptre.
-This rule requires two Conditions:
-
-    -   At: Thomas (Element) is in room L (Rooms).
-    -   Adjacent: L (Rooms) is beside L2 (Rooms).
-    
-In the second argument of the Predicate you will want to select the option "New variable".
-A new dialogue box will appear and you'll be able to name the Variable and name it as you wish, in this case we can just name it "L" (to indicate "location").
-A variable means that any element of the set could be filling this field and the rule can still be fired. This predicate should indicate that Thomas can't move between rooms that aren't beside each other.
-In the second argument of this predicate we will also add a new variable. You can, again, name it as you wish.
+    - turn : It is current players turn.
+    - at : Current player is located at city.
+    - hand : Player has a city card in its hand.
+    - city_card : City Card belongs to corresponding city
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    - At: Thomas (Element) is in room L2 (Rooms).
+    - research_center : Current player build research center at city.
 
-In the end you should be able to read this rule as:
-If Thomas is in room L, room L and room L2 are adjacent, then you can move Thomas to room L2.
-The remove box of the first condition should be checked, which should remove Thomas from the original room (as he cannot be in two rooms at the same time)
+This should roughly read as player have built a research center at city whose card is present in its hand.
 
-4.***Pick up golden key*** - This rule is very similar to the one in the first one, the only difference being that the key is in a different room.
-It requires two Conditions:
+Lastly, check the box beside the first and third condition. This will make sure that turn is passed to other player and current player no longer possess the city card as it was used to build research center at that city.
 
-    - At: Thomas (Element) is in the master bedroom (Rooms).
-    - At: Golden key (Element) is in the master bedroom (Rooms).
+3. ***fly*** - This rule requires four conditions which, as we covered before, are the Predicates we previously made:
 
-Once these conditions are filled, the result of the rule firing would be:
-
-    - Equip: Golden key (Element) Thomas (Element).
-
-This should roughly read as Thomas having equipped the golden key.
-
-Lastly, check the box beside the second condition. This will make the key dissappear from the master bedroom, since Thomas has already equipped it.
-
-5.***Enter secret room*** - This rule can be fired after Thomas equips the golden key since we don't want them to be able to enter the secret room without said key.
-It requires two Conditions:
-
-    - At: Thomas (Element) is in the the master bedroom (Rooms).
-    - Equip: Golden key (Element) Thomas (Element).
+    - turn : It is current players turn.
+    - at : Current player is located at city.
+    - hand : Player has a city card in its hand.
+    - city_card : City Card belongs to corresponding city
 
 Once these conditions are filled, the result of the rule firing would be:
 
-    - Locked: Thomas (Element) is in the secret room (trapped).
+    - at : Current player will be flown to city corresponding to card.
 
+This should roughly read as player flies from its current city to a city whose card it possessed.
 
-Lastly, check the box beside the first condition. This will remove Thomas from the home library and into the secret room, it isn't a cloning room after all.
+Lastly, check the box beside the first, second and third condition. This will make sure that turn is passed to other player, current player's location is changed and current player no longer possess the city card as it was used to fly player to that city.
 
+4. ***treat*** - This rule requires three conditions which, as we covered before, are the Predicates we previously made:
 
+    - turn : It is current players turn.
+    - at : Current player is located at city.
+    - disease : the city which is ailed by disease
 
-6.***Take metal key*** - Now, this is the last item Thomas will need to collect to be able to escape.
-It needs two Conditions:
+Once these conditions are filled, the result of the rule firing will be just removed the disease from ailing city which can be represented by checking the remove box near disease condition.
 
-    - Locked: Thomas (Element) is in the secret room (trapped)
-    - Locked: Metal key (Element) is in the secret room (trapped)
+This should roughly read as player located at ailing city removes the disease from the ailing city.
 
-Once these conditions are filled, the result of the rule firing would be:
-
-    - Equip: Metal key (Element) Thomas (Element).
-
-
-And finally, check the box to remove the second condition (this would mean that after the rule is fired the metal key will disappear from the room as Thomas has equipped it.)
-
-
-
-7.***Leave secret room*** - This rule is much simpler than the other ones since it only needs Thomas to be in the secret room without any other prerequisite.
-It needs only one Condition:
-
-    - Locked: Thomas (Element) is in the secret room (trapped)
-
-The result would simply take Thomas back to the master bedroom:
-
-    - At: Thomas (Element) is in the the master bedroom (Rooms).
-
-
-And lastly, check the box next to the condition to remove it. This would delete Thomas from the secret room.
-
-
-
-8.***Leave creepy house*** - And with this rule we have reached what would be the end of the game.
-It needs two Conditions:
-
-    - At: Thomas (Element) is in the the main room (Rooms).
-    - Equip: Keypad code (Element) Thomas (Element).
-
-The result would finally put Thomas on his way home, wherever that is:
-
-    - At: Thomas (Element) is on their road home (Rooms).
-
+Lastly, check the box beside the first and third condition. This will make sure that turn is passed to other player, and disease is removed from ailing city.
 
 And lastly, check the box next to the first condition to remove it, removing Thomas from the creepy house.
 
