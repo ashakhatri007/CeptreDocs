@@ -189,27 +189,19 @@ This should roughly read as player located at ailing city removes the disease fr
 
 Lastly, check the box beside the first and third condition. This will make sure that turn is passed to other player, and disease is removed from ailing city.
 
-And lastly, check the box next to the first condition to remove it, removing Thomas from the creepy house.
+{% include note.html content="Note that while adding rules we use variable name instead of constants defined in sets. This is important as we define rules on types and after firing rules, the corresponding constants from initial state are used." %}
 
 Ceptre text based code:
 ```
 stage main = { 
 
-pick_up_metal_key : locked thomas dungeon * locked metal_key dungeon -o locked thomas dungeon * equip metal_key thomas * ().
+drive : turn P * at P C * adjacent C C' -o adjacent C C' * at P C' * ().
 
-leave_dungeon : locked thomas dungeon * equip metal_key thomas -o equip metal_key thomas * at thomas hallway * ().
+build : turn Player * at Player City * hand Player Card * city_card City Card -o at Player City * city_card City Card * research_center City * ().
 
-move : at thomas L * adjacent L L2 -o adjacent L L2 * at thomas L2 * ().
+fly : turn P * at P C * hand P CityCard * city_card C' CityCard -o city_card C' CityCard * at P C' * ().
 
-pick_up_golden_key : at thomas master_bedroom * at golden_key master_bedroom -o at thomas master_bedroom * equip golden_key thomas * ().
-
-take_keypad_code : locked thomas secret_room * locked metal_key secret_room -o locked thomas secret_room * equip metal_key thomas * ().
-
-enter_secret_room : at thomas master_bedroom * equip golden_key thomas -o equip golden_key thomas * locked thomas secret_room * ().
-
-leave_secret_room : locked thomas secret_room -o at thomas master_bedroom * ().
-
-leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal_key thomas * at thomas road_home * ().
+treat : turn Player * at Player City * disease City -o at Player City * ().
 
 }
 
@@ -217,7 +209,7 @@ leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal
 
 Ceptre Web editor simulation for initial 3 rules: 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145291901-2f324f5e-a0ac-4a84-b60f-f4169baa26a2.mov">
+    <source src = "">
 </video>
 
 
