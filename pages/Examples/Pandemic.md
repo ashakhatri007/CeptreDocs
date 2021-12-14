@@ -11,43 +11,48 @@ folder: Examples
 ## Concept
 
 Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached.
+
 ![pandemic-2013-display](https://user-images.githubusercontent.com/42487202/146022356-c4982efb-2fd1-4184-b465-5dadd5fc3d36.jpg)
 
 ## Add Sets
 
 Now we will add the elements we saw in the concept into the project. To start with, Navigate to the Editor Tab of the Ceptre Editor and locate the Sets. Select the option to Add a New Set, a dialogue box will appear from the website which will allow you to name it. 
- Our game world here is made up pf 3 sets i.e. elements, rooms and trapped.
+ Our game world here is made up of 3 sets i.e. city, player and city_card.
 
- 1. elements - thomas, metal_key, golden_key, keypad_code (It comprises of elements in game world)
- 2. rooms - hallway, home_library, master_bedroom, main_room, road_home (It comprises of all the rooms that Thomas will be able to move back and forth as well as interact with the items in them)
- 3. trapped - dungeon, secret_room (It comprises of all the rooms that Thomas can't interact with until he use the respective key)
+ 1. city - For the sake of this example, we assume there are 5 cities - atlanta, los_angeles, bogota, kinshasa, delhi.
+ 2. player - We assume there are 4 players with names - player_a, player_b, player_c, player_d.
+ 3. city_card - We make 5 cards corresponding to each city i.e. atlanta_card, los_angeles_card, bogota_card, kinshasa_card, delhi_card.
 
  Cepter text based code:
  ```
- numbers : type.
+numbers : type.
 
-elements : type.
-thomas : elements.
-metal_key : elements.
-golden_key : elements.
+city : type.
+atlanta : city.
+los_angeles : city.
+bogota : city.
+kinshasa : city.
+delhi : city.
 
-rooms : type.
-hallway : rooms.
-home_library : rooms.
-master_bedroom : rooms.
-main_room : rooms.
-road_home : rooms.
+player : type.
+player_a : player.
+player_b : player.
+player_c : player.
+player_d : player.
 
-trapped : type.
-dungeon : trapped.
-secret_room : trapped.
+city_card : type.
+atlanta_card : city_card.
+los_angeles_card : city_card.
+bogota_card : city_card.
+kinshasa_card : city_card.
+delhi_card : city_card.
 
 ```
 
 Cepter Web Editor simulation :
 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145275866-9cdb9269-a5a4-44bf-9f7e-4409f88ab016.mp4">
+    <source src = "">
 </video>
 
 ## Add Predicates

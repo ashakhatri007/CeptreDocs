@@ -30,7 +30,7 @@ Now we will add the elements we saw in the concept into the project. To start wi
 
  Cepter text based code:
  ```
- numbers : type.
+numbers : type.
 
 elements : type.
 thomas : elements.
