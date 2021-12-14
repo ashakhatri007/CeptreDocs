@@ -207,7 +207,7 @@ treat : turn Player * at Player City * disease City -o at Player City * ().
 
 Ceptre Web editor simulation for initial 3 rules: 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146051234-5d74ecd7-62f6-44ad-a2ab-947c3e8800bf.mov">
 </video>
 
 
