@@ -255,6 +255,7 @@ context init =
     adjacent delhi los_angeles,
     adjacent los_angeles delhi
 }.
+
 ```
 
 Ceptre Web editor simulation: 
@@ -270,21 +271,32 @@ Ceptre text base code:
 ```
 context init = 
 {
-    adjacent hallway home_library, 
-    adjacent home_library hallway,
-    adjacent home_library master_bedroom,
-    adjacent master_bedroom home_library,
-    adjacent master_bedroom main_room,
-    adjacent main_room master_bedroom,
-    at golden_key master_bedroom, 
-    locked thomas dungeon,
-    locked metal_key dungeon,
+    adjacent atlanta los_angeles, 
+    adjacent los_angeles atlanta,
+    adjacent los_angeles bogota,
+    adjacent bogota kinshasa,
+    adjacent bogota los_angeles,
+    adjacent kinshasa bogota,
+    adjacent kinshasa delhi,
+    adjacent delhi kinshasa,
+    adjacent delhi los_angeles,
+    adjacent los_angeles delhi,
+    at player_a atlanta,
+    at player_b atlanta,
+    at player_c atlanta,
+    at player_d atlanta,
+    turn player_a,
+    turn player_a,
+    turn player_a,
+    turn player_a,
+    hand player_a bogota_card,
+    hand player_a los_angeles_card
 }.
 
 ```
 Ceptre Web editor simulation: 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145320882-b3f5f763-7846-4c66-a69f-d317fe957dc5.mov">
+    <source src = "">
 </video>
 
 ## Execution
