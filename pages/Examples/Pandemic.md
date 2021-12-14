@@ -296,7 +296,7 @@ context init =
 ```
 Ceptre Web editor simulation: 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146068665-ba7ef62a-238d-4aa6-894e-4bb0b24817c9.mov">
 </video>
 
 ## Execution
@@ -306,8 +306,8 @@ The first thing we need to do is click on "Start Execution", because otherwise t
 
 Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
 
+![ceptre-editor-pandemic-transitions](https://user-images.githubusercontent.com/42487202/146068993-039e5990-a88b-4fda-8b8a-2af4bd1d759d.png)
 
-![image](https://user-images.githubusercontent.com/42487202/145321472-1ee3363e-8286-483f-b3eb-8765bf774b23.png)
+![ceptre-editor-pandemic-states](https://user-images.githubusercontent.com/42487202/146069003-46c8d4e5-be84-41e7-a19a-527651893522.png)
 
-![image](https://user-images.githubusercontent.com/42487202/145321493-b222eeef-fa26-4407-b57a-c319a5d81602.png)
 
