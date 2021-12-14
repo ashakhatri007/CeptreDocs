@@ -11,10 +11,7 @@ folder: Examples
 ## Concept
 
 Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached.
-
-![FreedomConcept](https://user-images.githubusercontent.com/42487202/145275919-8f7e587a-df34-4c05-bcb5-b44b0293b1e5.png)
-
-
+![pandemic-2013-display](https://user-images.githubusercontent.com/42487202/146022356-c4982efb-2fd1-4184-b465-5dadd5fc3d36.jpg)
 
 ## Add Sets
 
