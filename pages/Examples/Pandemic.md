@@ -205,7 +205,7 @@ treat : turn Player * at Player City * disease City -o at Player City * ().
 }
 ```
 
-Ceptre Web editor simulation for initial 3 rules: 
+Ceptre Web editor simulation for  rules: 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146051234-5d74ecd7-62f6-44ad-a2ab-947c3e8800bf.mov">
 </video>
@@ -217,14 +217,13 @@ The Initial State is the state of execution your program will begin in.
 In this example you only have to think of it in two ways:
 
 The building of your map, which will most likely stay stagnant.
-In this case, the rooms (including the locked ones) will not change at all throughout all the "playthrough."
+In this case, the adjacent cities will not change at all throughout all the "playthrough."
 
-The first position of your elements. These will change in the playthroughs, but when you start the "game" again these elements will go back to the position you put them in.
-In this case, the items and Thomas will all start in specific positions, however they will be moved or mutated in the game. Once you start the game again Thomas and the items will go back to their first positions.
+The first position of your sets. These will change in the playthroughs, but when you start the "game" again these elements will go back to the position you put them in.
+In this case, the players, hand and their turns will all start in specific positions, however they will be moved or mutated in the game.
 With that in mind we will start by making the map.
-We'll start by adding the adjacent rooms.
+We'll start by adding the adjacent cities.
 
-Since we already have some rules to move into certain places (Locked rooms and the exit) we do not have to add them here; however we do need to add the rest of the rooms since the rule that applies to them uses variables (The Move rule).
 
 First we'll select the button "Add Atom."
 An atom is just the predicate that we will be using for the Initial State.
@@ -233,27 +232,28 @@ For this whole step we will be using the "Adjacent" predicate.
 
 Next we will insert the arguments:
 
-    - Adjacent: Hallway (Rooms) Home library (Rooms).
+    - adjacent: atlanta (city) los_angeles (city).
 
-Note:
-
-This only means that Thomas will be able to go into the Home library, but not from the Home library to the Hallway. To allow them to go back and forward we need to do this rule again, just switching the arguments.
-
+{% include note.html content="This only means that player will be able to go into los_angeles from atlanta, but not from the los_angeles to the atlanta. To allow them to go back and forward we need to do this rule again, just switching the arguments." %}
 
 To save time we should also use the button "Duplicate Atom" which, as the name suggests, will make a copy of the atom.
-This way we only have to switch the arguments without having to select the predicate again.
+This way we only have to switch the arguments without having to select the predicate again. The game map will look as below:
 
 Ceptre text base code:
 
 ```
 context init = 
 {
-    adjacent hallway home_library, 
-    adjacent home_library hallway,
-    adjacent home_library master_bedroom,
-    adjacent master_bedroom home_library,
-    adjacent master_bedroom main_room,
-    adjacent main_room master_bedroom,
+    adjacent atlanta los_angeles, 
+    adjacent los_angeles atlanta,
+    adjacent los_angeles bogota,
+    adjacent bogota kinshasa,
+    adjacent bogota los_angeles,
+    adjacent kinshasa bogota,
+    adjacent kinshasa delhi,
+    adjacent delhi kinshasa,
+    adjacent delhi los_angeles,
+    adjacent los_angeles delhi
 }.
 ```
 Ceptre Web editor simulation: 
@@ -262,7 +262,7 @@ Ceptre Web editor simulation:
 </video>
 
 
-Similarly we will be putting all the elements in their place, however we know that we will be able to change their original states.
+Similarly, we will be putting all the players in their place, and initialize the game configuration with their turns and status of cards in their hand. 
 
 Ceptre text base code:
 

@@ -302,7 +302,7 @@ context init =
     adjacent home_library master_bedroom,
     adjacent master_bedroom home_library,
     adjacent master_bedroom main_room,
-    adjacent main_room master_bedroom,
+    adjacent main_room master_bedroom
 }.
 ```
 Ceptre Web editor simulation: 
@@ -326,7 +326,7 @@ context init =
     adjacent main_room master_bedroom,
     at golden_key master_bedroom, 
     locked thomas dungeon,
-    locked metal_key dungeon,
+    locked metal_key dungeon
 }.
 
 ```
