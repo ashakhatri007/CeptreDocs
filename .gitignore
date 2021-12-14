@@ -6,3 +6,5 @@ _pdf
 .idea
 vendor/
 .bundle/
+.vscode/ltex.hiddenFalsePositives.en-US.txt
+.vscode/ltex.dictionary.en-US.txt

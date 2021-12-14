@@ -40,12 +40,12 @@ player_b : player.
 player_c : player.
 player_d : player.
 
-city_card : type.
-atlanta_card : city_card.
-los_angeles_card : city_card.
-bogota_card : city_card.
-kinshasa_card : city_card.
-delhi_card : city_card.
+card : type.
+atlanta_card : card.
+los_angeles_card : card.
+bogota_card : card.
+kinshasa_card : card.
+delhi_card : card.
 
 ```
 
@@ -58,50 +58,71 @@ Cepter Web Editor simulation :
 
 ## Add Predicates
 
-In this example we have 4 predicates, note that we lock every predicate after definition so that we dont edit them errorneously post definition:
+In this example we have 6 predicates, note that we lock every predicate after definition so that we don't edit them erroneously post definition:
 
-1. Locked - As the name suggests, this state should represent an element being in a room that they can't get out.
+1. hand - As the name suggests, this state should represent the player having card in hand.
 It is composed of two arguments:
 
-    - Element: A character or an item
-    - Trapped: A room that cannot be interacted until Thomas has a key.
+    - player: A player who is playing the board game.
+    - card: A card corresponding to a city.
 
 
-2. At - This Predicate is similar to the previous one as they both indicate the location of an element, however in this one the elements can move between the rooms.
+2. at - It describes the position of the player.
 It is composed of two arguments:
 
-    - Element: A character or an item.
-    - Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
+    - player: A player who is playing the board game.
+    - city: A city where the player is located currently.
 
 
-3. Equip - In this world we want Thomas to be able to pick up and equip elements that they can use.
-It is composed of two arguments:
+3. turn - In this game world, we decide which player is going to play via a token system. This predicate signifies the token which can be used by player to denote its turn.
+It is composed of one argument:
 
-    - Element: A character or an item. Once we make the rules this element will be Thomas.
-    - Element: A character or an item. Once we make the rules this element will be the items that Thomas can pick up.
+    - player: A player whose turn is next to play the board game.
 
 
-4. Adjacent - This Predicate will indicate which rooms are beside each other and once we make the Rules it will allows us to make Thomas only be able to move between rooms that are beside each other.
+4. adjacent - This Predicate will indicate which cities are beside each other and once we make the Rules it will allow us to make player only be able to move between cities that are beside each other.
 It is composed of two arguments, however they are the same Sets:
 
-    - Rooms: The rooms that Thomas will be able to move in and out without the need of a key.
+    - city: The cities that player will be able to move from and to.
+
+5. city_card - This predicate will indicate the presence of a card corresponding to a city. The player will need a city card to move to that city.
+It is composed of two arguments:
+    
+    - city: A city where player intends to go.
+    - card: A card corresponding to city mentioned above.
+
+6. disease - This represents the presence of disease in a city.
+It is composed of one argument:
+
+    - city: A city which is ailed by disease.
+
+7. research_center - This represents building of research center at a city by player. This research center is aimed at doing research for disease.
+It is composed of one argument:
+
+    - city: A city where player aims to build research center.
 
 Cepter text based code:
 ```
-locked elements trapped : pred.
+hand player card : pred.
 
-at elements rooms : pred.
+at player city : pred.
 
-equip elements elements : pred.
+turn player : pred.
 
-adjacent rooms rooms : pred.
+adjacent city city : pred.
+
+city_card city card : pred.
+
+disease city : pred.
+
+research_center city : pred.
 
 ```
 
 Cepter Web Editor simulation :
 
 <video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/145281698-cab4c812-1f37-4517-ab5b-c6aa63c74442.mov">
+    <source src = "">
 </video>
 
 ## Add Rules
