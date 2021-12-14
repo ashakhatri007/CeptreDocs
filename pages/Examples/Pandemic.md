@@ -122,7 +122,7 @@ research_center city : pred.
 Cepter Web Editor simulation :
 
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146036370-e4f196f1-d62a-4bd6-a3f5-dfb8e9925b85.mov">
 </video>
 
 ## Add Rules
