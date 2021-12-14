@@ -96,7 +96,7 @@ entries:
       output: web, pdf
 
     - title: Pandemic
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /Pandemic.html
       output: web, pdf
 
   - title: Theory
