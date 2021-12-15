@@ -59,7 +59,11 @@ The above mechanics essentially mean that we have 2 types of objects i.e. player
 
 Ceptre Web Editor Simulation:
 <video width = "650" controls>
-    <source src = "">
-</video>
+    <source src = "https://user-images.githubusercontent.com/42487202/146256144-361a58ed-2dff-4b02-b773-f84cbfc92c3c.mov">
+</vid
+
+
+
+eo>
 
 
