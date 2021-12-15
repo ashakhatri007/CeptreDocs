@@ -31,7 +31,7 @@ Let's break down the syntax on `-o`, left side construct are called conditions a
 
 ## Example
 
-Let's take a simple example where we want to define a rule where a player1 is at location `A` and want to move at location `B` should be able to move only when locations `A` and `B` are adjacent to each other. For this statement, we define the game mechanics as follows:
+Let's take a simple example where we want to define a rule where a player1 is at location `a` and want to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. For this statement, we define the game mechanics as follows:
 
 ***Types***
 ```
@@ -40,8 +40,8 @@ player1 : player.
 player2 : player.
 
 location : type.
-A : location.
-B : location.
+a : location.
+b : location.
 ```
 
 ***Predicates***
@@ -55,7 +55,7 @@ adjacent location location : pred
 move : at P L * adjacent L L' -o at P L'
 ```
 
-The above mechanics essentially mean that we have 2 types of objects i.e. player and location. We define 2 predicates viz at (denoting players current location) and adjacent (denoting adjacency between locations). Using these types and predicated we define a rule which moves any player `P` located at `L` to location `L'` only when locations `L` and `L'` are adjacent to each other. The game map defining the initial adjacent locations and player positions will be part of [GameState](GameState.html)
+The above mechanics essentially mean that we have 2 types of objects i.e. player and location. We define 2 predicates i.e. 'at' (denoting players current location) and 'adjacent' (denoting adjacency between locations). Using these types and predicated we define a rule which moves any player `P` located at `L` to location `L'` only when locations `L` and `L'` are adjacent to each other. The game map defining the initial adjacent locations and player positions will be part of [GameState](GameState.html)
 
 Ceptre Web Editor Simulation:
 <video width = "650" controls>
