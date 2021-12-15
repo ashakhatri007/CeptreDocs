@@ -13,9 +13,6 @@ folder: Overview
 You can download the Ceptre command line tool for Windows, macOS, or Linux here: 
 https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0
 
-Alternatively, you can download the source code and find instructions to build it here: 
-https://github.com/chrisamaphone/interactive-lp
-
 ## Writing a Hello World Program
 The “Hello World” example of Ceptre (i.e. the smallest complete, runnable program with nontrivial 
 behavior) is a program with two predicates and a single rule.
