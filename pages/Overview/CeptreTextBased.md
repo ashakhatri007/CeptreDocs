@@ -3,7 +3,7 @@ title: Ceptre Text Based
 tags: [getting_started, troubleshooting]
 keywords:
 summary: "In this section we introduce the basic programming constructs of the Ceptre language and 
-run a small "Hello World!" program"
+run a small 'Hello World!' program"
 sidebar: mydoc_sidebar
 permalink: CeptreTextBased.html
 folder: Overview

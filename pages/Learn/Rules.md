@@ -16,7 +16,7 @@ A Ceptre program is a collection of terms, predicates, and rules Σ, along with 
 
 ## Syntax
 
-In Ceptre program, the basic rules go in `main` stage. User can define specific rules under different stages, but that will be covered in [stages](Stages.html) documentation. 
+In Ceptre program, the basic rules go in `main` stage. User can define specific rules under different stages, but that will be covered in [stages](Stages_Interactivity.html) documentation. 
 
 The basic syntax for defining rules goes in below manner:
 
