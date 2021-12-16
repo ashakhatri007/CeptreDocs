@@ -63,6 +63,10 @@ entries:
       url: /Stages_Interactivity.html
       output: web, pdf
 
+    - title: Quiescence
+      url: /Quiescence.html
+      output: web, pdf
+
     - title: Game state
       url: /GameState.html
       output: web, pdf

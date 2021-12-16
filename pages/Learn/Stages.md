@@ -10,7 +10,7 @@ folder: Learn
 
 ## Definition
 
-In simple terms, 'Stage' can be thought of as named collection of [Rules](Rules.html). Stages help to logically separate the concerns of game. This collection of rules can be executed automatically or by interaction, with or without initial context. 
+In simple terms, 'Stage' can be thought of as named collection of [Rules](Rules.html). Stages help to structure the ceptre program into independent components. This collection of rules i.e, stages can be executed automatically (non-deterministically) or by interaction (deterministically), with or without initial context. 
 
 ## Syntax
 
@@ -27,7 +27,7 @@ stage stage_name = {
 ```
 
 {% include note.html content="Here 'stage_name' can be replaced by any name that programmer wants to use" %}
-The syntax for adding interaction is to wrap all the rules in a stage, then add a `#interactive` directive. Similarly, for the stage that requires an initial state and an initial context we use a `#trace` directive.
+The syntax for adding interaction is to wrap all the rules in a stage, then add a `#interactive` directive. Similarly, for the stage that requires an initial state and an initial context we use a `#trace _` directive.
 
 
 ## Example
@@ -78,7 +78,7 @@ context init = {
 stage all_rules = {
     move : at P L * adjacent L L' -o at P L'
 }
-#trace _all_rules init.
+#trace _ all_rules init.
 ```
 {% include note.html content="In trace directive example we use the initial context `init` defined above in Initial state" %}
 
