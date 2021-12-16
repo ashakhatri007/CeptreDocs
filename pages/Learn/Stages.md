@@ -84,5 +84,5 @@ stage all_rules = {
 
 Ceptre Web Editor Simulation:
 <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/146407727-de91b1f3-7336-447a-bd8d-771533514b0f.mov">
 </video>
