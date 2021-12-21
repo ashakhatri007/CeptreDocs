@@ -59,8 +59,12 @@ entries:
       url: /Rules.html
       output: web, pdf
     
-    - title: Stages
-      url: /Stages.html
+    - title: Stages & Interactivity
+      url: /Stages_Interactivity.html
+      output: web, pdf
+
+    - title: Quiescence
+      url: /Quiescence.html
       output: web, pdf
 
     - title: Game state
