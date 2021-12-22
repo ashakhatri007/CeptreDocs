@@ -31,7 +31,7 @@ stage main = {
 #interactive main
 ```
 A *stage* is a set of rules that can be available in the simulation at a given time. For now, we 
-just have one stage called `main` There is a single rule called `rule` that has `a` as a 
+just have one stage called `main`. There is a single rule called `rule` that has `a` as a 
 precondition and `b` as an effect. Executing `rule` will remove `a` from the simulation state and 
 add `b`. The directive `#interactive main` says that the player can choose which rules 
 execute in the `main` stage (as opposed to them being chosen by the computer).

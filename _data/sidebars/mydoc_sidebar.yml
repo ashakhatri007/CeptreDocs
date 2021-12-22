@@ -39,8 +39,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Types
-      url: /Types.html
+    - title: Types and Terms
+      url: /TypesAndTerms.html
       output: web, pdf
 
     - title: Objects
@@ -51,8 +51,8 @@ entries:
       url: /Predicates.html
       output: web, pdf
 
-    - title: Actions
-      url: /Actions.html
+    - title: Backward-Chaining Predicates
+      url: /BackwardChaining.html
       output: web, pdf
 
     - title: Rules

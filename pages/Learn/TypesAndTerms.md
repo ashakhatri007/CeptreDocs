@@ -2,7 +2,8 @@
 title: Types and Terms
 tags: [getting_started, troubleshooting]
 keywords:
-summary: "In this page we introduce to basic programming constructs for ceptre language - Types"
+summary: "In this page we introduce to basic programming constructs for ceptre language - Types 
+and Terms"
 sidebar: mydoc_sidebar
 permalink: TypesAndTerms.html
 folder: Learn
