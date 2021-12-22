@@ -16,6 +16,11 @@ relating to any object. 1-parameter (*unary*) predicates usually describe proper
 Predicates with 2 or more parameters usually describe relationships between objects. Parameters 
 have to have a specific type, as described above.
 
+Predicates defined with `pred` are *forward-chaining* predicates; they are updated by the 
+forward-chaining rules described in the [Rules](Rules.html) section and represent changeable facts 
+about the simulation. For *backward-chaining* predicates that represent permanent facts, see 
+[Backward-Chaining Predicates](BackwardChaining.html).
+
 ## Syntax
 
 A predicate is defined as follows:
