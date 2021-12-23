@@ -12,9 +12,14 @@ folder: Learn
 
 Predicates are statements about the state of the simulation. A predicate can have 0 or more 
 *parameters*. 0-parameter (*nullary*) predicates are simple statements about the world, not 
-relating to any object. 1-parameter (*unary*) predicates usually describe properties of objects. 
-Predicates with 2 or more parameters usually describe relationships between objects. Parameters 
-have to have a specific type, as described above.
+relating to any object. 1-parameter (*unary*) predicates usually describe properties or conditions 
+of objects. Predicates with 2 or more parameters usually describe relationships between objects. 
+Parameters have to have a specific [type](TypesAndTerms.html).
+
+Predicates defined with `pred` are *forward-chaining* predicates; they are updated by the 
+forward-chaining rules described in the [Rules](Rules.html) section and represent changeable facts 
+about the simulation. For *backward-chaining* predicates that represent permanent facts, see 
+[Backward-Chaining Predicates](BackwardChaining.html).
 
 ## Syntax
 
