@@ -17,8 +17,8 @@ as a “function” whose output is a unique term. This kind of term allows type
 inductively. For example, the natural numbers can be defined as consisting of zero and the successor 
 of any natural number.
 
-Note that the Ceptre web editor *only* supports simple terms. The web editor refers to types as 
-*sets* because they are defined by simply listing the terms.
+Note that the Ceptre web editor *only* supports simple terms. Thus, types must be defined by 
+exhaustively listing the terms; the web editor refers to types defined in this way as *sets*.
 
 ## Syntax
 Types and terms are defined as follows:

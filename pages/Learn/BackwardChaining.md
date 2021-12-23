@@ -9,7 +9,7 @@ permalink: BackwardChaining.html
 folder: Learn
 ---
 
-##Definition
+## Definition
 *Backward-chaining* predicates represent persistent facts about the simulation. Backward chaining 
 predicates are accompanied by a set of rules for when that predicate holds. When a backward-chaining
 predicate appears as the condition of a rule, Ceptre will search backwards from that condition 
@@ -39,13 +39,13 @@ Backward-chaining rules are written as follows:
 ```
 <rule_name> : <predicate> [<params>] [<- <condition_predicate> [condition_params]].
 ```
-Some rules just assert that certain instantiations of a predicate holds. For instance, a natural 
-number plus zero equals itself. Other rules have conditions, such as the successor rule for addition
-above. We write the condition second to reflect the backward-chaining nature of these rules; Ceptre 
-starts from the conclusion and tries to prove the condition. Backward-chaining rules are usually 
-named with the corresponding predicate, a slash, and then some identifier. For example, our rules 
-for addition could be named `plus/z` and `plus/s` because they concern zero and the successor 
-function, respectively.
+Some rules just assert that certain instantiations of a predicate hold. For instance, a natural 
+number plus zero equals itself; this rule does not have any conditions. Other rules have 
+conditions, such as the successor rule for addition above. We write the condition second to reflect 
+the backward-chaining nature of these rules; Ceptre starts from the conclusion and tries to prove 
+the condition. Backward-chaining rules are usually named with the corresponding predicate, a slash, 
+and then some identifier. For example, our rules for addition could be named `plus/z` and `plus/s` 
+because they concern zero and the successor function, respectively.
 
 ## Example
 This is the addition example we mentioned above written in Ceptre:

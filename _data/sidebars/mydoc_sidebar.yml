@@ -43,10 +43,6 @@ entries:
       url: /TypesAndTerms.html
       output: web, pdf
 
-    - title: Objects
-      url: /Objects.html
-      output: web, pdf
-
     - title: Predicates
       url: /Predicates.html
       output: web, pdf
