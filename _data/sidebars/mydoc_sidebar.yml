@@ -23,7 +23,7 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /introduction.html
+      url: /Introduction.html
       output: web, pdf
 
     - title: Ceptre Text based
