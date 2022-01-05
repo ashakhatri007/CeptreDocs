@@ -12,6 +12,8 @@ folder: Examples
 The blocks world is a common scenario used for example problems in AI. It consists of a set of 
 stackable blocks on a table and a robot arm that can move them.
 
+![image](https://user-images.githubusercontent.com/42487202/148270116-94f2bb5b-d3b1-4866-89b8-fddc72ada78c.png)
+
 ## Add Sets
 The only type (or set, in the web editor) we need for this example is `block`. For this example, 
 we’ll have three blocks, that we’ll call `a`, `b` and `c`. Since there is only one arm and one table
