@@ -33,12 +33,20 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
 
 To run the Ceptre program, click the Start Execution button. You should see something like the following:
 
+![States](https://user-images.githubusercontent.com/42487202/148247870-fefd6923-7026-4162-92a5-33df8e4ba88a.png)
+
+![Transitions](https://user-images.githubusercontent.com/42487202/148247941-899f15d6-4016-43a9-9e4d-2f5231ef1c50.png)
+
 The text area labeled States displays the current state, as well as previous states of the program. These describe which predicates are present in the world at any point in the program’s execution.
 
 Each of the options in the selection window labelled ‘Transitions’ corresponds to a different way that the program can evolve, which we call a *transition*. But we only have one rule in our program, so how can it have multiple choices for what to do?
 
 The answer is that we started with an initial state containing *three instances* of the predicate `a`, and each of those instances is considered distinct. So there really are three possibilities for how the rule may fire, corresponding to *which* of the three `a's` is to be replaced.
 Select one of the transitions and click the Execute Transition button. Now you should see:
+
+![Execution_1](https://user-images.githubusercontent.com/42487202/148248002-b6ba3516-d5f7-45d8-a90f-43ea7b0fa4c3.png)
+
+![Execution_2](https://user-images.githubusercontent.com/42487202/148248029-e69e71e6-8445-435d-986c-b2e6712d38b4.png)
 
 The States text area has updated to show the new state, as well as keeping a record of the rule which was fired to transition between states. Similarly, the Transitions selector has updated for the new program state.
 
