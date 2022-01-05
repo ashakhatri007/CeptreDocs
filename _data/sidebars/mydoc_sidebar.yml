@@ -23,9 +23,8 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /index.html
+      url: /introduction.html
       output: web, pdf
-      type: homepage
 
     - title: Ceptre Text based
       url: /CeptreTextBased.html
@@ -65,14 +64,6 @@ entries:
 
     - title: Game state
       url: /GameState.html
-      output: web, pdf
-
-  - title: Ceptre Web Editor
-    output: web, pdf
-    folderitems:
-
-    - title: Try Ceptre Web Editor
-      url: /CeptreWebEditor.html
       output: web, pdf
 
   - title: Examples
