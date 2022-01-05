@@ -18,16 +18,28 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
 1. Start by creating 2 predicates in the editor, naming them ‘a’ and ‘b’ 
     - Click the Lock button after naming the predicates. This locks the predicates from being edited, preventing any accidental edits which could change later fields in the editor.
 
+    <video width = "650" controls>
+    <source src = "">
+    </video>
+
 2. Now create a rule in the editor, naming it ‘rule’
     - Add a new Condition by pressing the + under Conditions, and in the dropdown box, select the predicate ‘a’
     - Add a new Added Effect by clicking the + under Added Effects, and select the predicate ‘b’ from the dropdown menu
     - This rule should replace the predicate ‘a’ with the predicate ‘b’, so check the remove box next to the condition predicate ‘a’ in the rule
     - Now click the Lock button next to the rule’s name to prevent further editing and allow it to be used in execution
 
+    <video width = "650" controls>
+    <source src = "">
+    </video>
+
 3. Finally, create an atom in the initial state by switching tabs to the initial state tab, and clicking the Add Atom button
     - Select ‘a’ from the drop-down menu. 
     - Now click the Duplicate Atom button twice. 
     - Click the Lock button for each of the created atoms. 
+
+    <video width = "650" controls>
+    <source src = "">
+    </video>
 
 ## Running a Hello World Program
 
