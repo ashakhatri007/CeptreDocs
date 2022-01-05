@@ -17,7 +17,7 @@ The only type (or set, in the web editor) we need for this example is `block`. F
 we’ll have three blocks, that we’ll call `a`, `b` and `c`. Since there is only one arm and one table
 in this example, we don’t terms to identify them.
 
-### Ceptre Text-Based Code:
+Ceptre Text-Based Code:
 ```
 block : type.
 a : block.
@@ -36,7 +36,7 @@ block. We’ll formalize these as the following predicates:
 - `on block block`: the first block is on top of the second block
 - `clear block`: the block is clear; we can put another block on it
 
-### Ceptre Text-Based Code:
+Ceptre Text-Based Code:
 ```
 arm_free : pred.
 arm_holding block : pred.
@@ -66,7 +66,7 @@ block on the table or another block (likewise). Thus, we’ll need the following
   - Afterwards, the arm is free and no longer holding the block. The destination block is no longer 
     clear. The block that was being held is on the destination block and is clear.
 
-### Ceptre Text-Based
+Ceptre Text-Based
 ```
 stage blocks = {
 pickup_from_table
@@ -85,7 +85,7 @@ put_on_block
 In our initial state, `a` and `b` are on the table, and `c` is on top of `a`. `b` and `c` are clear, 
 and the arm is free.
 
-### Ceptre Text-Based
+Ceptre Text-Based
 ```
 context init =
 { on_table a, on_table b, on c a, clear c, clear b, arm_free }
