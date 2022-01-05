@@ -17,9 +17,9 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
 
 1. Start by creating 2 predicates in the editor, naming them ‘a’ and ‘b’ 
     - Click the Lock button after naming the predicates. This locks the predicates from being edited, preventing any accidental edits which could change later fields in the editor.
-
+    
     <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/148257087-50f3031b-5a61-4aff-940a-56ed605d945d.mov">
     </video>
 
 2. Now create a rule in the editor, naming it ‘rule’
@@ -29,7 +29,7 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
     - Now click the Lock button next to the rule’s name to prevent further editing and allow it to be used in execution
 
     <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/148257153-7ab9a003-ddd0-47c0-a048-beebee760592.mov">
     </video>
 
 3. Finally, create an atom in the initial state by switching tabs to the initial state tab, and clicking the Add Atom button
@@ -38,7 +38,7 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
     - Click the Lock button for each of the created atoms. 
 
     <video width = "650" controls>
-    <source src = "">
+    <source src = "https://user-images.githubusercontent.com/42487202/148257203-02dfdf5a-5917-4707-a57d-c00e7f9d6231.mov">
     </video>
 
 ## Running a Hello World Program
