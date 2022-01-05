@@ -55,6 +55,9 @@ Now click the Execute to Quiescence button. This will select transitions at rand
 ## Saving / Retrieving program state
 You can save or retrieve ceptre program by using "Save Program" and "Choose File" buttons respectively.
 
-
+![EditorSave](https://user-images.githubusercontent.com/42487202/148253639-d88494b5-1ea3-41e6-ae8f-2cccb2828d79.png)
 
 Similarly, you can save or retrieve ceptre initial state by using "Save Initial State" and "Choose File" buttons respectively.
+
+![InitialStateSave](https://user-images.githubusercontent.com/42487202/148253685-ca344351-3bec-40e8-9b5c-d5e79eed18b5.png)
+
