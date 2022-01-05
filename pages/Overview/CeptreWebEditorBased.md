@@ -52,4 +52,9 @@ The States text area has updated to show the new state, as well as keeping a rec
 
 Now click the Execute to Quiescence button. This will select transitions at random until there are no more rules which can fire.
 
+## Saving / Retrieving program state
+You can save or retrieve ceptre program by using "Save Program" and "Choose File" buttons respectively.
 
+
+
+Similarly, you can save or retrieve ceptre initial state by using "Save Initial State" and "Choose File" buttons respectively.
