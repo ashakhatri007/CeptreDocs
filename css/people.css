@@ -22,3 +22,7 @@
 #cards .card .user-content .user-name {
   margin-right: 150px;
 }
+
+.row{
+  overflow-x: hidden;
+}
