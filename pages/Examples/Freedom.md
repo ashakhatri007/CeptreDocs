@@ -338,6 +338,9 @@ Ceptre Web editor simulation:
 
 Now we can finally start our prototype and see if it works.
 The first thing we need to do is click on "Start Execution", because otherwise the fireable rules won't appear in the box in the Execution tab.
+<br>
+To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:
+`./ceptre-bin Escape.cep`
 
 Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
 
