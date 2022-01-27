@@ -11,7 +11,7 @@ folder: Overview
 
 ## Installing Ceptre
 You can download the Ceptre command line tool for Windows, macOS, or Linux 
-[here](https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0).
+[here](https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0?resourcekey=0-6HEBxccnrhn8TsEdxGiLiA&usp=sharing).
 
 ## Writing a Hello World Program
 The “Hello World” example of Ceptre (i.e. the smallest complete, runnable program with nontrivial 
