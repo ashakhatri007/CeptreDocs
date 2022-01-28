@@ -251,6 +251,7 @@ leave_secret_room : locked thomas secret_room -o at thomas master_bedroom * ().
 leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal_key thomas * at thomas road_home * ().
 
 }
+#interactive main
 
 ```
 
@@ -327,6 +328,7 @@ context init =
     locked thomas dungeon,
     locked metal_key dungeon
 }
+#trace _ main init
 
 ```
 Ceptre Web editor simulation: 

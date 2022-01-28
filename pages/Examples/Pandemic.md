@@ -203,6 +203,7 @@ fly : turn P * at P C * hand P CityCard * city_card C' CityCard -o city_card C' 
 
 treat : turn Player * at Player City * disease City -o at Player City * ().
 }
+#interactive main
 ```
 
 Ceptre Web editor simulation for rules: 
@@ -292,6 +293,7 @@ context init =
     hand player_a bogota_card,
     hand player_a los_angeles_card
 }
+#trace _ main init
 
 ```
 Ceptre Web editor simulation: 
