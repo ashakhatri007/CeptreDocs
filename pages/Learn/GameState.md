@@ -1,7 +1,5 @@
 ---
 title: Game State
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - Game State"
 sidebar: mydoc_sidebar
 permalink: GameState.html
@@ -25,7 +23,7 @@ context context_name{
     .
     .
     predicateN
-}
+}.
 ```
 {% include note.html content="Here ‘context_name’ can be replaced by any name that programmer wants to use" %}
 

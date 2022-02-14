@@ -639,6 +639,7 @@ li.activeSeries {
 div.alert code, h2 code {
     background-color: transparent !important;
 }
+
 /* without this, the links in these notes aren't visible.*/
 .alert a {
     text-decoration: underline;
@@ -948,7 +949,7 @@ span.soft {
 
 /* this part adds an icon after external links, using FontAwesome*/
 a[href^="http://"]:after, a[href^="https://"]:after {
-    content: "\f08e";
+    /*content: "\f08e";*/
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;

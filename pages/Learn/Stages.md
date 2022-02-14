@@ -1,7 +1,5 @@
 ---
 title: Stages and Interactivity
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - Stages"
 sidebar: mydoc_sidebar
 permalink: Stages_Interactivity.html
@@ -75,9 +73,6 @@ context init = {
 ***Stages - Trace***
 
 ```
-stage all_rules = {
-    move : at P L * adjacent L L' -o at P L'
-}
 #trace _ all_rules init.
 ```
 {% include note.html content="In trace directive example we use the initial context `init` defined above in Initial state" %}

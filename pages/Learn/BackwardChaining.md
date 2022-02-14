@@ -1,7 +1,5 @@
 ---
 title: Backward-Chaining Predicates
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - 
 Backward-Chaining Predicates"
 sidebar: mydoc_sidebar

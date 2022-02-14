@@ -1,8 +1,6 @@
 ---
 title: Escape the Castle
-tags: [getting_started, troubleshooting]
-keywords:
-summary: "Escape the castle is a video game whose mechaics we will define using Ceptre."
+summary: "Escape the castle is a video game whose mechanics we will define using Ceptre."
 sidebar: mydoc_sidebar
 permalink: Freedom.html
 folder: Examples

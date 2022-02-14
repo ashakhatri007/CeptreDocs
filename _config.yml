@@ -53,6 +53,8 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
+ # parse markdown inside block-level HTML tag
+ parse_block_html: true
 
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 

@@ -1,7 +1,5 @@
 ---
 title: Ceptre Text Based
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this section we introduce the basic programming constructs of the Ceptre language and 
 run a small 'Hello World!' program"
 sidebar: mydoc_sidebar
@@ -11,11 +9,11 @@ folder: Overview
 
 ## Installing Ceptre
 You can download the Ceptre command line tool for Windows, macOS, or Linux 
-[here](https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0?resourcekey=0-6HEBxccnrhn8TsEdxGiLiA&usp=sharing).
+[here](https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0?resourcekey=0-6HEBxccnrhn8TsEdxGiLiA&usp=sharing). For OSx-based systems, you will have to set appropriate permissions for binary to run.
 
 ## Writing a Hello World Program
 The “Hello World” example of Ceptre (i.e. the smallest complete, runnable program with nontrivial 
-behavior) is a program with two predicates and a single rule.
+behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b` when that rule is applied.
 
 Start by creating a new text file called `HelloWorld.cep`. Add these lines to the file:
 ```
@@ -41,10 +39,10 @@ Finally, add these lines:
 context init = {
     a, a, a
 }
-#trace _ main init
+#trace _ main init.
 ```
 This creates a `context` called `init` in which the simulation state consists of three instances of 
-`a`. The directive `#trace _ main init` says to start the simulation in the `main` stage with `init`
+`a`. The directive `#trace _ main init.` says to start the simulation in the `main` stage with `init`
 as the initial state. The first argument is the limit to the number of rules that can be fired; 
 `_` means no limit. Congratulations, you now have a Ceptre program!
 

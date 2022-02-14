@@ -26,11 +26,11 @@ entries:
       url: /Introduction.html
       output: web, pdf
 
-    - title: Ceptre Text based
+    - title: Ceptre Command Line - Hello world!
       url: /CeptreTextBased.html
       output: web, pdf
 
-    - title: Ceptre Web Editor based
+    - title: Ceptre Web Editor - Hello world!
       url: /CeptreWebEditorBased.html
       output: web, pdf
 
@@ -70,9 +70,9 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Escape the Castle
-      url: /Freedom.html
-      output: web, pdf
+   # - title: Escape the Castle
+    #  url: /Freedom.html
+    #  output: web, pdf
 
     - title: Blocks world
       url: /BlocksWorld.html

@@ -1,7 +1,5 @@
 ---
 title: "Introduction"
-keywords: ceptre
-tags: [introduction]
 sidebar: mydoc_sidebar
 permalink: Introduction.html
 summary: These brief instructions will help you get introduced with the ceptre. The other topics in this website will help you to go deep down on specific topics.

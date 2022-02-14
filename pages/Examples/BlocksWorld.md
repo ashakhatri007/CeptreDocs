@@ -1,7 +1,5 @@
 ---
 title: Blocks World
-tags: [getting_started, troubleshooting]
-keywords:
 summary: ""
 sidebar: mydoc_sidebar
 permalink: BlocksWorld.html
@@ -14,10 +12,10 @@ stackable blocks on a table and a robot arm that can move them.
 
 ![image](https://user-images.githubusercontent.com/42487202/148270116-94f2bb5b-d3b1-4866-89b8-fddc72ada78c.png)
 
-## Add Sets
+## Add Sets/Types 
 The only type (or set, in the web editor) we need for this example is `block`. For this example, 
 we’ll have three blocks, that we’ll call `a`, `b` and `c`. Since there is only one arm and one table
-in this example, we don’t terms to identify them.
+in this example, we don’t term to identify them.
 
 Ceptre Text-Based Code:
 ```
