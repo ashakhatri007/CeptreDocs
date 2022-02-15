@@ -1,5 +1,5 @@
 ---
-title: Ceptre Web Editor Based
+title: Ceptre Web Editor
 summary: "In this page we introduce to web editor for ceptre language and run a small hello world program"
 sidebar: mydoc_sidebar
 permalink: CeptreWebEditorBased.html
@@ -11,7 +11,7 @@ Ceptre web editor can be accessed [here](CeptreWebEditor.html)
 
 ## Writing a Hello World Program
 
-The "hello world" example of Ceptre (i.e. the smallest complete, runnable program with nontrivial behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b` when that rule is applied.
+The "hello world" example of Ceptre (i.e. the smallest complete, runnable program with nontrivial behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b`.
 
 1. Start by creating 2 predicates in the editor, naming them ‘a’ and ‘b’ 
     - Click the Lock button after naming the predicates. This locks the predicates from being edited, preventing any accidental edits which could change later fields in the editor.

@@ -1,5 +1,5 @@
 ---
-title: Ceptre Text Based
+title: Ceptre Command Line Tools
 summary: "In this section we introduce the basic programming constructs of the Ceptre language and 
 run a small 'Hello World!' program"
 sidebar: mydoc_sidebar
@@ -13,7 +13,7 @@ You can download the Ceptre command line tool for Windows, macOS, or Linux
 
 ## Writing a Hello World Program
 The “Hello World” example of Ceptre (i.e. the smallest complete, runnable program with nontrivial 
-behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b` when that rule is applied.
+behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b`.
 
 Start by creating a new text file called `HelloWorld.cep`. Add these lines to the file:
 ```

@@ -2,14 +2,14 @@
 title: "Introduction"
 sidebar: mydoc_sidebar
 permalink: Introduction.html
-summary: These brief instructions will help you get introduced with the ceptre. The other topics in this website will help you to go deep down on specific topics.
+summary: These brief instructions will help you get introduced with the ceptre. The other topics in this website will help you to go deep down on specific areas.
 ---
 
 ## What is Ceptre?
 
 Ceptre is a *linear logic programming language* created by [Chris
 Martens](https://sites.google.com/ncsu.edu/cmartens). It can be used to specify evolving
-systems with lots of independent parts in a concise way. Ceptre is a rule-based specification language which uses
+systems with lots of independent parts concisely. Ceptre is a rule-based specification language which uses
 logic to represent the rules of a system. A Ceptre program
 represents system states (configurations) as multisets of logical
 predicates and defines rules that can manipulate those multisets,
@@ -27,40 +27,16 @@ that specify state transitions on a component-wise basis: this rule says
 that if our state contains an `a`, a `b`, and a `c`, then we can replace
 that part of the state with `d` and `e`.
 
-This style of programming becomes more useful when we can write *rule
-schema* like
+## Medium of Usage
 
-```
-arm_holding A * clear B -o on A B * clear A * arm_free
-```
+There are two mediums of using ceptre viz Command Line tools and Web Editor. Refer [Ceptre Command Line](/CeptreTextBased.html) and [Ceptre Web Editor](/CeptreWebEditor.html) Hello world programs to get your development environment ready. It should be noted that Ceptre Web Editor provides a subset of functionality compared to command line tools. If you are someone who is programming at advanced level we recommend using ceptre command line tools whereas if you are someone who is just exploring and want to get started then Web editor will be your best bet!
 
-where `A` and `B` *range over* entities in the world we are simulating. (By
-convention, Ceptre uses capital letters as variables that may range over
-all appropriately-typed entities.)
-
-## How does Ceptre work?
-
-In Ceptre, simulation states are represented by multisets of
-ground predicates. These multisets contain all the information
-that is true in the current simulation state. Using these multisets,
-the simulation is progressed by the use of rules, which change
-the state by taking preconditions in the current simulation state,
-and replacing the preconditions with new ground predicates
-that follow the fixed rule structure. This allows the states to
-change constrained by rules set forth by the author.
-
-Describing the rules requires the definition of two symbols:
-
-```
-* - tensor and -o - lolli
-```
-tensor conjoins predicates whereas lolli is the transition operator 
 
 ## Example 
 
 Let us try to use the symbols `*` and `-o` described above over a real-world example.
 
-In the predator/prey model,there could be a rule `rabbit_grow_mature :rabbit young -o rabbit mature` which requires a young rabbit as a
+In the predator/prey model, there could be a rule `rabbit_grow_mature :rabbit young -o rabbit mature` which requires a young rabbit as a
 condition, which is replaced by a mature rabbit.
 
 Ceptre’s types describe the domains over which program
