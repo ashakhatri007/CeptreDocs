@@ -31,6 +31,7 @@ that part of the state with `d` and `e`.
 
 There are two mediums of using ceptre viz Command Line tools and Web Editor. Refer [Ceptre Command Line](/CeptreTextBased.html) and [Ceptre Web Editor](/CeptreWebEditor.html) Hello world programs to get your development environment ready. It should be noted that Ceptre Web Editor provides a subset of functionality compared to command line tools. If you are someone who is programming at advanced level we recommend using ceptre command line tools whereas if you are someone who is just exploring and want to get started then Web editor will be your best bet!
 
+![Ceptre2Mediums](https://user-images.githubusercontent.com/42487202/153968077-7cccaa02-4348-48db-b10f-23853f54b7bb.png)
 
 ## Example 
 
