@@ -12,7 +12,7 @@ folder: Learn
 
 ## Syntax
 
-We use `qui` construct which is a special token denoting quiescence of the program. All outer-level rules must have this form: upon quiescence, replace one stage resource with another.
+We use `qui` construct which is a special token denoting quiescence of the program. There are 2 ways we define rules in ceptre program viz inside and outside [stages](/Stages_Interactivity.html). The rules defined outside stages are called outer-level rules. All outer-level rules must have this form: upon quiescence, replace one stage resource with another.
 
 The basic syntax for defining quiescence goes in below manner:
 ```
@@ -35,5 +35,7 @@ stage react = {
 }
 qui * stage react -o stage act.
 ```
+
+In the above example user-selected rules are the ones user can choose while the ceptre program is interacting with user whereas the reactive rules are the ones user have no control on and system takes care of executing it.
 
 {% include note.html content="`%` denotes single line comment in ceptre" %}
