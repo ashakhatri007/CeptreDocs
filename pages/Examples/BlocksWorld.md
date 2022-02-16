@@ -46,8 +46,10 @@ clear block : pred.
 ```
 
 ## Add Stages
-There’s only one stage in this example, which we’ll call `blocks`. 
-{% include note.html content="You can have multiple stages in ceptre program using command line tools but if you are using web editor then it supports just one stage per program. Learn more about [Stages](/Stages_Interactivity.html)." %} 
+There’s only one stage in this example, which we’ll call `blocks`. You can have multiple stages in ceptre program using command line tools but if you are using web editor then it supports just one stage per program. Learn more about [Stages](/Stages_Interactivity.html).
+<br>
+{% include note.html content="For each rule, we require certain pre-conditions, which when fulfilled generates the defined effects when that rule is fired. Both the pre-conditions (LHS) as well the added effects (RHS) comprises the predicates we have defined before. As we define our rules, we will see that on application of the rule the initial state is changed to new. If we want to sustain objects in LHS of the rule we will have to explicitly mention it in RHS which implies that the new state contains that element. We imitate similar concept in web editor with the help of 'Remove' checkbox. By default, the web editor sustain everything from LHS to RHS but if we want something to not be present in our new state we can check the 'Remove' box which ensures the removal of that particular object from new state after the rule is fired." %}
+
 The player can pick up a block from the table or another block (for mechanical reasons, these are separate actions) and can place a 
 block on the table or another block (likewise). Thus, we’ll need the following rules:
 1. `Pick up a block from the table` - The block must be on the table and clear and the arm must be free. Afterwards, the arm is no longer free; it is holding the block. The block is no longer on the table and is no longer considered clear (for our purposes, a block we’re holding isn’t clear).
