@@ -24,7 +24,7 @@ stage stage_name = {
 }
 ```
 
-{% include note.html content="Here 'stage_name' can be replaced by any name that programmer wants to use" %}
+{% include note.html content="Here 'stage_name' can be replaced by any name that programmer wants to use. The Web Editor supports just one stage, if you would like to use multiple stages in your ceptre program, we recommend using command line tools." %}
 The syntax for adding interaction is to wrap all the rules in a stage, then add a `#interactive` directive. Similarly, for the stage that requires an initial state and an initial context we use a `#trace _` directive.
 
 
