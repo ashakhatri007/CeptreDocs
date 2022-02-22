@@ -54,7 +54,7 @@ The player can pick up a block from the table or another block (for mechanical r
 block on the table or another block (likewise). Thus, we’ll need the following rules:
 1. `Pick up a block from the table` - The block must be on the table and clear and the arm must be free. Afterwards, the arm is no longer free; it is holding the block. The block is no longer on the table and is no longer considered clear (for our purposes, a block we’re holding isn’t clear).
 
-    | LHS (Pre-conditions) | RHS (Added Effects) |
+    | LHS (Pre-conditions) | RHS (Added Effects) |  
     | -------------------- | ------------------- | 
     | on_table X           | - (Remove)          |
     | clear X              | - (Remove)          |
