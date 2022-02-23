@@ -8,7 +8,7 @@ folder: Learn
 
 ## Definition
 
-In simple terms, 'Stage' can be thought of as named collection of [Rules](Rules.html). Stages help to structure the ceptre program into independent components. This collection of rules i.e, stages can be executed automatically (non-deterministically) or by interaction (deterministically), with or without initial context. 
+In simple terms, 'Stage' can be thought of as named collection of [Rules](Rules.html). Stages help to structure the ceptre program into independent components. This collection of rules i.e, stages can be executed automatically (non-deterministically) or by interaction (deterministically), with or without initial context. If you are using Ceptre command line tools you can define multiple stages however, currently [Ceptre web editor](CeptreWebEditor.html) supports only one stage. 
 
 ## Syntax
 

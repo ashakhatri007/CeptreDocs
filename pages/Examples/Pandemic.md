@@ -8,7 +8,7 @@ folder: Examples
 
 ## Concept
 
-Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached.
+Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached. We simulate this example with 2 stages hence it will be best executed using command line tools. We will explain the web editor based coding constructs as well however we won't be able to run this full example using web editor as editor doesn't support multiple stages yet. 
 
 ![pandemic-2013-display](https://user-images.githubusercontent.com/42487202/146022356-c4982efb-2fd1-4184-b465-5dadd5fc3d36.jpg)
 
@@ -41,11 +41,11 @@ kinshasa_card : card.
 delhi_card : card.
 ```
 
-Cepter Web Editor simulation :
+<!---Cepter Web Editor simulation :
 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146030086-df9fd81d-7686-47a4-a0d1-5c17eb4ab813.mov">
-</video>
+</video>-->
 
 
 ## Add Predicates
@@ -93,9 +93,11 @@ It is composed of one argument:
 
     - cities: A city where player aims to build research center.
 
-8. `interact` - 
+8. `interact` - This represents interaction of current player on their turn. It is a null predicate without any arguments.
 
-9. `change` - 
+9. `change` - This represents change of turns between players which is automated. It is a null predicate without any arguments.
+
+{% include note.html content="Change and Interact are predicates which indicate what stage should be running. Since Ceptre consumes the predicates, it allows the stage to transition as no other rules in the same stage can fire. Interact predicate is used to force the turn stage to only allow a single rule, and the change predicate is used to prevent the automated turn rotation from becoming an infinite loop." %}
 
 Cepter text based code:
 ```
@@ -110,11 +112,11 @@ interact : pred.
 change : pred.
 ```
 
-Cepter Web Editor simulation :
+<!---Cepter Web Editor simulation :
 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146036370-e4f196f1-d62a-4bd6-a3f5-dfb8e9925b85.mov">
-</video>
+</video>-->
 
 ## Add Stages
 We have modularized this example into 2 stages i.e. `turn` and `playershift`. Learn more about Stages and their syntax [here](Stages_Interactivity.html). We will add rules for each stage which will define how our game world interacts with its predicates and types. Learn more about Rules and their syntax [here](Rules.html).
@@ -159,6 +161,42 @@ We define stage `turn` having below-mentioned rules. These rules are meant to be
     | at P C               | at P C              |
     | disease C            | - (Remove)          |
 
+<!---Ceptre Web editor simulation for rules: 
+<video width = "650" controls>
+    <source src = "https://user-images.githubusercontent.com/42487202/146051234-5d74ecd7-62f6-44ad-a2ab-947c3e8800bf.mov">
+</video>-->
+
+We define stage `playershift` having below-mentioned rules. These rules are required to change the turns between players.
+
+1. `papb` - This rule changes the turn from player a to player b.
+
+    | LHS (Pre-conditions) | RHS (Added Effects) |
+    | -------------------- | ------------------- | 
+    | change               | - (Remove)          |
+    | turn player_a        | turn player_b       |
+
+2. `pbpc` - This rule changes the turn from player b to player c.
+
+    | LHS (Pre-conditions) | RHS (Added Effects) |
+    | -------------------- | ------------------- | 
+    | change               | - (Remove)          |
+    | turn player_b        | turn player_c       |
+
+3. `pcpd` - This rule changes the turn from player c to player d.
+
+    | LHS (Pre-conditions) | RHS (Added Effects) |
+    | -------------------- | ------------------- | 
+    | change               | - (Remove)          |
+    | turn player_c        | turn player_d       |
+
+4. `pdpa` - This rule changes the turn from player d to player a.
+
+    | LHS (Pre-conditions) | RHS (Added Effects) |
+    | -------------------- | ------------------- | 
+    | change               | - (Remove)          |
+    | turn player_d        | turn player_a       |
+
+We manage to switch between the stages using `qui` construct. Learn more about [Quiescence](\Quiescence.html). The qui predicate is added to the state when the stage reaches quiescence, which is when no more rules in that stage can fire. Thus, when you have qui * stage playershift, you know that no more rules in the `playershift` stage can execute, so you replace those predicates with stage turn * interact, which lets you execute a rule from the turn stage.
 
 Ceptre text based code:
 ```
@@ -169,36 +207,27 @@ fly : interact * $turn P * at P C * hand P CityCard * $city_card C' CityCard -o 
 treat : interact * $turn Player * $at Player City * disease City -o ().
 } 
 #interactive turn.
+ qui * stage turn -o stage playershift * change.
+stage playershift = {
+    papb : change * turn player_a -o turn player_b.
+    pbpc : change * turn player_b -o turn player_c.
+    pcpd : change * turn player_c -o turn player_d.
+    pdpa : change * turn player_d -o turn player_a.
+}
+qui * stage playershift -o stage turn * interact.
 ```
-
-Ceptre Web editor simulation for rules: 
-<video width = "650" controls>
-    <source src = "https://user-images.githubusercontent.com/42487202/146051234-5d74ecd7-62f6-44ad-a2ab-947c3e8800bf.mov">
-</video>
-
 
 ## Initial State
 
-The Initial State is the state of execution your program will begin in.
+The Initial State is the state of execution your program will begin in. We will define initial game map with adjacent predicate by specifying which cities are adjacent to each other. Similarly, we will be putting all the players in their place, and initialize the game configuration with their turns and status of cards in their hand. 
 
-For this whole step we will be using the "Adjacent" predicate.
-
-Next we will insert the arguments:
-
-    - adjacent: atlanta (city) los_angeles (city).
-
-{% include note.html content="This only means that player will be able to go into los_angeles from atlanta, but not from the los_angeles to the atlanta. To allow them to go back and forward we need to do this rule again, just switching the arguments." %}
-
-To save time we should also use the button "Duplicate Atom" which, as the name suggests, will make a copy of the atom.
-This way we only have to switch the arguments without having to select the predicate again. The game map will look as below:
-
-Ceptre Web editor simulation: 
+<!---Ceptre Web editor simulation: 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146066796-4d8a1549-d3cd-4f99-9b66-c06b220a8953.mov">
-</video>
+</video>-->
 
 
-Similarly, we will be putting all the players in their place, and initialize the game configuration with their turns and status of cards in their hand. 
+
 
 Ceptre text base code:
 
@@ -226,25 +255,92 @@ context init = {
     hand player_a los_angeles_card
 }.
 #trace _ main init.
-
 ```
-Ceptre Web editor simulation: 
+<!---Ceptre Web editor simulation: 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146068665-ba7ef62a-238d-4aa6-894e-4bb0b24817c9.mov">
-</video>
+</video>-->
 
 ## Execution
 
-Now we can finally start our prototype and see if it works.
-The first thing we need to do is click on "Start Execution", because otherwise the fireable rules won't appear in the box in the Execution tab.
-<br>
-To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:
-`./ceptre-bin Pandemic.cep`
+Now we can finally start our prototype and see if it works. To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:
+`./ceptre-bin Pandemic.cep`. The complete code for Pandemic is as follows:
 
-Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
+```
+cities : type.
+atlanta : cities.
+los_angeles : cities.
+bogota : cities.
+kinshasa : cities.
+delhi : cities.
+players : type.
+player_a : players.
+player_b : players.
+player_c : players.
+player_d : players.
+card : type.
+atlanta_card : card.
+los_angeles_card : card.
+bogota_card : card.
+kinshasa_card : card.
+delhi_card : card.
+hand players card : pred.
+at players cities : pred.
+turn players : pred.
+adjacent cities cities : pred.
+city_card cities card: pred.
+disease cities : pred.
+research_center cities : pred.
+interact : pred.
+change : pred.
+done : pred.
+stage turn { 
+drive : interact * $turn P * at P C * $adjacent C C' -o  at P C'.
+build : interact * $turn Player * $at Player City * hand Player Card * $city_card City Card -o research_center City.
+fly : interact * $turn P * at P C * hand P CityCard * $city_card C' CityCard -o at P C'.
+treat : interact * $turn Player * $at Player City * disease City -o ().
+} 
+#interactive turn.
+ qui * stage turn -o stage playershift * change.
+stage playershift = {
+    papb : change * turn player_a -o turn player_b.
+    pbpc : change * turn player_b -o turn player_c.
+    pcpd : change * turn player_c -o turn player_d.
+    pdpa : change * turn player_d -o turn player_a.
+}
+qui * stage playershift -o stage turn * interact.
+context init = { 
+adjacent atlanta los_angeles, 
+adjacent los_angeles atlanta, 
+adjacent los_angeles bogota, 
+adjacent bogota kinshasa, 
+adjacent bogota los_angeles, 
+adjacent kinshasa bogota, 
+adjacent kinshasa delhi, 
+adjacent delhi kinshasa, 
+adjacent delhi los_angeles, 
+adjacent los_angeles delhi, 
+at player_a atlanta, 
+at player_b atlanta, 
+at player_c atlanta, 
+at player_d atlanta, 
+turn player_a, 
+hand player_a bogota_card, 
+hand player_b los_angeles_card, 
+hand player_c kinshasa_card, 
+hand player_d delhi_card, 
+city_card atlanta atlanta_card, 
+city_card los_angeles los_angeles_card, 
+city_card bogota bogota_card, 
+city_card kinshasa kinshasa_card, 
+city_card delhi delhi_card,
+interact}.
+#trace _turn init.
+```
 
-![ceptre-editor-pandemic-transitions](https://user-images.githubusercontent.com/42487202/146068993-039e5990-a88b-4fda-8b8a-2af4bd1d759d.png)
 
-![ceptre-editor-pandemic-states](https://user-images.githubusercontent.com/42487202/146069003-46c8d4e5-be84-41e7-a19a-527651893522.png)
+<!--![ceptre-editor-pandemic-transitions](https://user-images.githubusercontent.com/42487202/146068993-039e5990-a88b-4fda-8b8a-2af4bd1d759d.png)
+
+![ceptre-editor-pandemic-states](https://user-images.githubusercontent.com/42487202/146069003-46c8d4e5-be84-41e7-a19a-527651893522.png)-->
 
 
