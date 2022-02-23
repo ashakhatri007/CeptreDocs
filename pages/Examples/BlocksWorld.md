@@ -117,7 +117,7 @@ context init =
 ```
 
 ## Execution
-The complete command line code for this example is as below:
+To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin BlocksWorld.cep`. The complete code for Blocks World is as follows:
 ```
 block : type.
 a : block.
@@ -150,4 +150,3 @@ context init =
 
 #trace _ blocks init.
 ```
-To execute the text-based version, save the file as `blocks-world.cep` and run:`./ceptre-bin blocks-world.cep`. The exact syntax will depend on your operating system.

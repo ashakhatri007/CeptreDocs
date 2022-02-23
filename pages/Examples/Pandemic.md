@@ -262,9 +262,7 @@ context init = {
 </video>-->
 
 ## Execution
-
-Now we can finally start our prototype and see if it works. To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:
-`./ceptre-bin Pandemic.cep`. The complete code for Pandemic is as follows:
+To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin Pandemic.cep`. The complete code for Pandemic is as follows:
 
 ```
 cities : type.

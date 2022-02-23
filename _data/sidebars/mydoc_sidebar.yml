@@ -64,7 +64,7 @@ entries:
 
     - title: Game state
       url: /GameState.html
-      output: web, pdf
+      output: web, pdf 
 
   - title: Examples
     output: web, pdf
@@ -82,37 +82,37 @@ entries:
       url: /Pandemic.html
       output: web, pdf
 
-  - title: Theory
-    output: web, pdf
+  #- title: Theory
+   # output: web, pdf
 
-    folderitems:
-    - title: Formal definitions
-      url: /FormalDefinitions.html
-      output: web, pdf
+    #folderitems:
+    #- title: Formal definitions
+     # url: /FormalDefinitions.html
+     # output: web, pdf
 
-    - title: Multisets
-      url: /Multisets.html
-      output: web, pdf
+    #- title: Multisets
+     # url: /Multisets.html
+     # output: web, pdf
 
-    - title: Game mechanics
-      url: /GameMechanics.html
-      output: web, pdf
+    #- title: Game mechanics
+     # url: /GameMechanics.html
+     # output: web, pdf
 
-    - title: Transitions
-      url: /Transitions.html
-      output: web, pdf
+    #- title: Transitions
+    #  url: /Transitions.html
+    # output: web, pdf
 
-    - title: Execution trace
-      url: /ExecutionTrace.html
-      output: web, pdf
+    #- title: Execution trace
+    #  url: /ExecutionTrace.html
+    #  output: web, pdf
 
-    - title: Term quantification
-      url: /TermQuantification.html
-      output: web, pdf
+    #- title: Term quantification
+     # url: /TermQuantification.html
+     # output: web, pdf
 
-    - title: Substitution
-      url: /Substitution.html
-      output: web, pdf
+    #- title: Substitution
+     # url: /Substitution.html
+     # output: web, pdf
     
   - title: Publications
     output: web, pdf
@@ -130,9 +130,9 @@ entries:
       url: /People.html
       output: web, pdf
 
-    - title: Survey
-      url: /Survey.html
-      output: web, pdf
+    #- title: Survey
+     # url: /Survey.html
+     # output: web, pdf
 
    
 
