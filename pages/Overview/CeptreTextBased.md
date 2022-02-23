@@ -47,10 +47,7 @@ as the initial state. The first argument is the limit to the number of rules tha
 `_` means no limit. Congratulations, you now have a Ceptre program!
 
 ## Running a Hello World Program
-To run the program, run the executable with the name of your Ceptre file as an argument. For example:
-```
-./ceptre-bin HelloWorld.cep
-```
+To run the program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin HelloWorld.cep`.
 
 The exact name of the executable will depend on your operating system. You should see something 
 like the following:

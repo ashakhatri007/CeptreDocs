@@ -31,6 +31,7 @@ Let's break down the syntax on `-o`, left side construct are called conditions a
 
 Let's take a simple example where we want to define a rule where a player1 is at location `a` and want to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. For this statement, we define the game mechanics as follows:
 
+
 ***Types***
 ```
 player : type.
