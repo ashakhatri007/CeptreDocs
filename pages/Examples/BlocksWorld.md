@@ -24,8 +24,6 @@ a : block.
 b : block.
 c : block.
 ```
-Ceptre Web Editor Simulation:
-
 ![image](https://user-images.githubusercontent.com/42487202/155248178-fa73d2a5-2bde-4127-ac8e-c2ad89ec9ebf.png)
 
 ## Add Predicates
@@ -47,8 +45,6 @@ on_table block : pred.
 on block block : pred.
 clear block : pred.
 ```
-Ceptre Web Editor Simulation:
-
 ![image](https://user-images.githubusercontent.com/42487202/155248458-880383da-82a9-4104-8cfc-5111885291c3.png)
 
 ## Add Stages
@@ -131,9 +127,6 @@ context init =
 { on_table a, on_table b, on c a, clear c, clear b, arm_free }
 #trace _ blocks init.
 ```
-
-Ceptre Web Editor Simulation:
-
 ![image](https://user-images.githubusercontent.com/42487202/155249944-f7e01ecf-aa1c-4e32-90cd-24057c1125d8.png)
 
 
