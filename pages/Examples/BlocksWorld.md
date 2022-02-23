@@ -24,6 +24,9 @@ a : block.
 b : block.
 c : block.
 ```
+Ceptre Web Editor Simulation:
+
+![image](https://user-images.githubusercontent.com/42487202/155248178-fa73d2a5-2bde-4127-ac8e-c2ad89ec9ebf.png)
 
 ## Add Predicates
 We’ll need two predicates to describe the state of the arm. The arm can be free, or it can be 
@@ -44,6 +47,9 @@ on_table block : pred.
 on block block : pred.
 clear block : pred.
 ```
+Ceptre Web Editor Simulation:
+
+![image](https://user-images.githubusercontent.com/42487202/155248458-880383da-82a9-4104-8cfc-5111885291c3.png)
 
 ## Add Stages
 There’s only one stage in this example, which we’ll call `blocks`. You can have multiple stages in ceptre program using command line tools but if you are using web editor then it supports just one stage per program. Learn more about [Stages](/Stages_Interactivity.html).
