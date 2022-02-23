@@ -66,6 +66,10 @@ block on the table or another block (likewise). Thus, we’ll need the following
     | clear X              | - (Remove)          |
     | arm_free             | - (Remove)          |
     | -                    | arm_holding X       |
+    
+    ![image](https://user-images.githubusercontent.com/42487202/155249038-488bd658-c92c-4c4e-9f4c-92889f6547ab.png)
+
+    
 
 2. `Pick up a block from another block` - The top block must be clear and on the bottom block and the arm must be free. Afterwards, the arm is no longer free; it is holding the top block. The top block is no longer on the bottom block and no longer clear, while the bottom block is clear.
 
@@ -76,6 +80,8 @@ block on the table or another block (likewise). Thus, we’ll need the following
     | arm_free             | - (Remove)          |
     | -                    | clear Y             |
     | -                    | arm_holding X       |
+    
+    ![image](https://user-images.githubusercontent.com/42487202/155249426-3ab055ca-b567-421f-a6f2-625d9ac52ee3.png)
 
 3. `Place a block on the table` - The arm must be holding the block. Afterwards, the arm is no longer holding the block. The block is on the table and clear, and the arm is free.
 
@@ -85,6 +91,8 @@ block on the table or another block (likewise). Thus, we’ll need the following
     | -                    | on_table X          |
     | -                    | clear X             |
     | -                    | arm_free            |
+    
+    ![image](https://user-images.githubusercontent.com/42487202/155249623-211bf792-27e0-49b0-8ec4-2749da0727e2.png)
 
 4. `Place a block on another block` - The arm must be holding the block and the destination block must be clear. Afterwards, the arm is free and no longer holding the block. The destination block is no longer clear. The block that was being held is on the destination block and is clear.
 
@@ -95,6 +103,8 @@ block on the table or another block (likewise). Thus, we’ll need the following
     | -                    | on X Y              |
     | -                    | clear X             |
     | -                    | arm_free            |
+    
+    ![image](https://user-images.githubusercontent.com/42487202/155249771-aa632531-15a7-41da-a60f-a3940d66688d.png)
 
 Ceptre Text-Based Code:
 ```
@@ -121,6 +131,11 @@ context init =
 { on_table a, on_table b, on c a, clear c, clear b, arm_free }
 #trace _ blocks init.
 ```
+
+Ceptre Web Editor Simulation:
+
+![image](https://user-images.githubusercontent.com/42487202/155249944-f7e01ecf-aa1c-4e32-90cd-24057c1125d8.png)
+
 
 ## Execution
 To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin BlocksWorld.cep`. The complete code for Blocks World is as follows:
