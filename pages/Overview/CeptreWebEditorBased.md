@@ -21,9 +21,9 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
     </video>
 
 2. Now create a rule in the editor, naming it ‘rule’
-    - Add a new Condition by pressing the + under Conditions, and in the dropdown box, select the predicate ‘a’
+    - Add a new condition by pressing the + under Conditions, and in the dropdown box, select the predicate ‘a’
     - Add a new Added Effect by clicking the + under Added Effects, and select the predicate ‘b’ from the dropdown menu
-    - This rule should replace the predicate `a` with the predicate `b`, so check the remove box next to the condition predicate ‘a’ in the rule. Checking box next to `a` essentially means that, when the rule is fired than in the resulting state `a` is removed.
+    - This rule should replace the predicate `a` with the predicate `b`, so check the remove box next to the condition predicate `a` in the rule. Checking box next to `a` essentially means that, when the rule is fired then in the resulting state `a` is removed. Learn more about [Rules](/Rules.html) and this checkbox.
     - Now click the Lock button next to the rule’s name to prevent further editing and allow it to be used in execution
 
     <video width = "650" controls>
@@ -32,12 +32,14 @@ The "hello world" example of Ceptre (i.e. the smallest complete, runnable progra
 
 3. Finally, create an atom in the initial state by switching tabs to the initial state tab, and clicking the Add Atom button
     - Select ‘a’ from the drop-down menu. 
-    - Now click the Duplicate Atom button twice. 
+    - Now click the Duplicate Atom button twice, this will make sure we have 3 copies of `a` in initial state
     - Click the Lock button for each of the created atoms. 
 
     <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/148257203-02dfdf5a-5917-4707-a57d-c00e7f9d6231.mov">
     </video>
+
+{% include note.html content="Please make sure that you lock all the predicates, rules and atoms so that it is committed and ceptre editor understands using it" %}
 
 ## Running a Hello World Program
 
@@ -58,7 +60,7 @@ Select one of the transitions and click the Execute Transition button. Now you s
 
 ![Execution_2](https://user-images.githubusercontent.com/42487202/148248029-e69e71e6-8445-435d-986c-b2e6712d38b4.png)
 
-The States text area has updated to show the new state, as well as keeping a record of the rule which was fired to transition between states. Similarly, the Transitions selector has updated for the new program state.
+The States text area has updated to show the new state, as well as keeping a record of the rule which was fired to transition between states. Similarly, the Transitions' selector has updated for the new program state.
 
 Now click the Execute to Quiescence button. This will select transitions at random until there are no more rules which can fire.
 

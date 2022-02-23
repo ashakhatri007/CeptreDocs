@@ -55,6 +55,8 @@ move : at P L * adjacent L L' -o at P L'
 
 The above mechanics essentially mean that we have 2 types of objects i.e. player and location. We define 2 predicates i.e. 'at' (denoting players current location) and 'adjacent' (denoting adjacency between locations). Using these types and predicated we define a rule which moves any player `P` located at `L` to location `L'` only when locations `L` and `L'` are adjacent to each other. The game map defining the initial adjacent locations and player positions will be part of [GameState](GameState.html)
 
+{% include note.html content="In Ceptre web editor, when we define any rule everything that is present in LHS is essentially retained to RHS hence we click the remove checkbox if we want to remove a specific predicate in resulting state when that rule is fired. However, in Ceptre command line tools there is no such default retention of predicates from LHS to RHS." %}
+
 Ceptre Web Editor Simulation:
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146256144-361a58ed-2dff-4b02-b773-f84cbfc92c3c.mov">
