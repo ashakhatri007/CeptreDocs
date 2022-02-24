@@ -1,28 +1,24 @@
-/* ==== Cards using Bootstrap === */
-
-#cards .card {
-  border-radius: 20px;
-  min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+.people {
+  zoom: 50%;
 }
 
-#cards .heading-border {
-  position: absolute;
-  width: 100%;
-  top: 60%;
+.column {
+  float: left;
+  width: 40%;
+  padding: 20px;
 }
 
-#cards .card .user-picture img {
-  position: absolute;
-  top: -20%;
-  right: 10%;
-  background: #f8f9fa!important;
-  padding: 10px;
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
-
-#cards .card .user-content .user-name {
-  margin-right: 150px;
-}
-
-.row{
-  overflow-x: hidden;
+.caption {
+  padding: 0px;
+  display: block;
+  font-size: large;
 }
