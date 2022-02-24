@@ -33,7 +33,7 @@ table or on another block. We also need a predicate that indicates that there is
 block. We’ll formalize these as the following predicates:
 1. `arm_free`: the arm is not holding anything
 2. `arm_holding block`: the arm is holding the block
-3. `on_table block`: the block is on the table
+3. `on_table block`: the block is on table
 4. `on block block`: the first block is on top of the second block
 5. `clear block`: the block is clear; we can put another block on it
 
@@ -48,13 +48,13 @@ clear block : pred.
 ![image](https://user-images.githubusercontent.com/42487202/155248458-880383da-82a9-4104-8cfc-5111885291c3.png)
 
 ## Add Stages
-There’s only one stage in this example, which we’ll call `blocks`. You can have multiple stages in ceptre program using command line tools but if you are using web editor then it supports just one stage per program. Learn more about [Stages](/Stages_Interactivity.html).
+There’s only one stage in this example, which we’ll call `blocks`. You can have multiple stages in the ceptre program using command-line tools but if you are using the web editor then it supports just one stage per program. Learn more about [Stages](/Stages_Interactivity.html).
 <br>
-{% include note.html content="For each rule, we require certain pre-conditions, which when fulfilled generates the defined effects when that rule is fired. Both the pre-conditions (LHS) as well the added effects (RHS) comprises the predicates we have defined before. As we define our rules, we will see that on application of the rule the initial state is changed to new. If we want to sustain objects in LHS of the rule we will have to explicitly mention it in RHS which implies that the new state contains that element. We imitate similar concept in web editor with the help of 'Remove' checkbox. By default, the web editor sustain everything from LHS to RHS but if we want something to not be present in our new state we can check the 'Remove' box which ensures the removal of that particular object from new state after the rule is fired." %}
+{% include note.html content="For each rule, we require certain pre-conditions, which when fulfilled generate the defined effects when that rule is fired. Both the pre-conditions (LHS) as well the added effects (RHS) comprise the predicates we have defined before. As we define our rules, we will see that on the application of the rule the initial state is changed to new. If we want to sustain objects in the LHS of the rule we will have to explicitly mention it in RHS which implies that the new state contains that element. We imitate a similar concept in the web editor with the help of the 'Remove' checkbox. By default, the web editor sustains everything from LHS to RHS but if we want something to not be present in our new state we can check the 'Remove' box which ensures the removal of that particular object from the new state after the rule is fired." %}
 
 The player can pick up a block from the table or another block (for mechanical reasons, these are separate actions) and can place a 
 block on the table or another block (likewise). Thus, we’ll need the following rules:
-1. `Pick up a block from the table` - The block must be on the table and clear and the arm must be free. Afterwards, the arm is no longer free; it is holding the block. The block is no longer on the table and is no longer considered clear (for our purposes, a block we’re holding isn’t clear).
+1. `Pick up a block from the table` - The block must be on the table and clear and the arm must be free. Afterward, the arm is no longer free; it is holding the block. The block is no longer on the table and is no longer considered clear (for our purposes, a block we’re holding isn’t clear).
 
     | LHS (Pre-conditions) | RHS (Added Effects) |  
     | -------------------- | ------------------- | 
@@ -67,7 +67,7 @@ block on the table or another block (likewise). Thus, we’ll need the following
 
     
 
-2. `Pick up a block from another block` - The top block must be clear and on the bottom block and the arm must be free. Afterwards, the arm is no longer free; it is holding the top block. The top block is no longer on the bottom block and no longer clear, while the bottom block is clear.
+2. `Pick up a block from another block` - The top block must be clear and on the bottom block and the arm must be free. Afterward, the arm is no longer free; it is holding the top block. The top block is no longer on the bottom block and no longer clear, while the bottom block is clear.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -79,7 +79,7 @@ block on the table or another block (likewise). Thus, we’ll need the following
     
     ![image](https://user-images.githubusercontent.com/42487202/155249426-3ab055ca-b567-421f-a6f2-625d9ac52ee3.png)
 
-3. `Place a block on the table` - The arm must be holding the block. Afterwards, the arm is no longer holding the block. The block is on the table and clear, and the arm is free.
+3. `Place a block on the table` - The arm must be holding the block. Afterward, the arm is no longer holding the block. The block is on the table and clear, and the arm is free.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -90,7 +90,7 @@ block on the table or another block (likewise). Thus, we’ll need the following
     
     ![image](https://user-images.githubusercontent.com/42487202/155249623-211bf792-27e0-49b0-8ec4-2749da0727e2.png)
 
-4. `Place a block on another block` - The arm must be holding the block and the destination block must be clear. Afterwards, the arm is free and no longer holding the block. The destination block is no longer clear. The block that was being held is on the destination block and is clear.
+4. `Place a block on another block` - The arm must be holding the block and the destination block must be clear. Afterward, the arm is free and no longer holding the block. The destination block is no longer clear. The block that was being held is on the destination block and is clear.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -131,7 +131,7 @@ context init =
 
 
 ## Execution
-To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin BlocksWorld.cep`. The complete code for Blocks World is as follows:
+To run the text-based version of the program, run the executable with the name of your Ceptre file as an argument. For example: `./ceptre-bin BlocksWorld.cep`. The complete code for Blocks World is as follows:
 ```
 block : type.
 a : block.

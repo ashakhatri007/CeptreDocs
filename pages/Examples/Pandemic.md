@@ -8,19 +8,19 @@ folder: Examples
 
 ## Concept
 
-Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached. We simulate this example with 2 stages hence it will be best executed using command line tools. We will explain the web editor based coding constructs as well however we won't be able to run this full example using web editor as editor doesn't support multiple stages yet. 
+Pandemic is based on the premise that four diseases have broken out in the world, each threatening to wipe out a region. The game accommodates two to four players, each playing one of seven possible roles: dispatcher, medic, scientist, researcher, operations expert, contingency planner, or quarantine specialist. Through the combined effort of all the players, the goal is to discover all four cures before any of several game-losing conditions are reached. We simulate this example with 2 stages hence it will be best executed using command-line tools. We will explain the web editor-based coding constructs as well however we won't be able to run this full example using web editor as the editor doesn't support multiple stages yet. 
 
 ![pandemic-2013-display](https://user-images.githubusercontent.com/42487202/146022356-c4982efb-2fd1-4184-b465-5dadd5fc3d36.jpg)
 
 ## Add Sets/Types
 
-Our game world here is made up of 3 types/sets i.e. city, player and card. Learn more about Types and their syntax [here].(TypesAndTerms.html)
+Our game world here is made up of 3 types/sets i.e. city, player, and card. Learn more about Types and their syntax [here](TypesAndTerms.html).
 
  1. cities - For the sake of this example, we assume there are 5 cities - atlanta, los_angeles, bogota, kinshasa, delhi.
  2. players - We assume there are 4 players with names - player_a, player_b, player_c, player_d.
  3. card - We make 5 cards corresponding to each city i.e. atlanta_card, los_angeles_card, bogota_card, kinshasa_card, delhi_card.
 
- Cepter text based code:
+ Ceptre text-based code:
  ```
 cities : type.
 atlanta : cities.
@@ -41,7 +41,7 @@ kinshasa_card : card.
 delhi_card : card.
 ```
 
-<!---Cepter Web Editor simulation :
+<!---Ceptre Web Editor simulation :
 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146030086-df9fd81d-7686-47a4-a0d1-5c17eb4ab813.mov">
@@ -50,9 +50,9 @@ delhi_card : card.
 
 ## Add Predicates
 
-In this example, we will define the state of simulation with the help of below-mentioned predicates. Learn more about Predicates and their syntax [here](Predicates.html).
+In this example, we will define the state of simulation with the help of the below-mentioned predicates. Learn more about Predicates and their syntax [here](Predicates.html).
 
-1. `hand` - As the name suggests, this state should represent the player having card in hand.
+1. `hand` - As the name suggests, this state should represent the player having a card in hand.
 It is composed of two arguments:
 
     - players: A player who is playing the board game.
@@ -66,40 +66,40 @@ It is composed of two arguments:
     - cities: A city where the player is located currently.
 
 
-3. `turn` - In this game world, we decide which player is going to play via a token system. This predicate signifies the token which can be used by player to denote its turn.
+3. `turn` - In this game world, we decide which player is going to play via a token system. This predicate signifies the token which can be used by the player to denote its turn.
 It is composed of one argument:
 
     - players: A player whose turn is next to play the board game.
 
 
-4. `adjacent` - This Predicate indicates which cities are beside each other and once we make the Rules it will allow us to make player only be able to move between cities that are adjacent to each other.
-It is composed of two arguments, however they are of the same type i.e. city:
+4. `adjacent` - This Predicate indicates which cities are beside each other and once we make the Rules it will allow us to make players only be able to move between cities that are adjacent to each other.
+It is composed of two arguments however, they are of the same type i.e. city:
 
-    - cities: The cities that player will be able to move from and to.
+    - cities: The cities that the player will be able to move from and to.
 
 5. `city_card` - This predicate will indicate the presence of a card corresponding to a city. The player will need a city card to move to that city.
 It is composed of two arguments:
     
-    - cities: A city where player intends to go.
-    - card: A card corresponding to city mentioned above.
+    - cities: A city where the player intends to go.
+    - card: A card corresponding to the city mentioned above.
 
 6. `disease` - This represents the presence of disease in a city.
 It is composed of one argument:
 
     - cities: A city which is ailed by disease.
 
-7. `research_center` - This represents building of research center at a city by player. This research center is aimed at doing research for disease.
+7. `research_center` - This represents building the research center at a city by player. This research center is aimed at doing research for the disease.
 It is composed of one argument:
 
-    - cities: A city where player aims to build research center.
+    - cities: A city where the player aims to build a research center.
 
-8. `interact` - This represents interaction of current player on their turn. It is a null predicate without any arguments.
+8. `interact` - This represents an interaction of the current player on their turn. It is a null predicate without any arguments.
 
-9. `change` - This represents change of turns between players which is automated. It is a null predicate without any arguments.
+9. `change` - This represents the change of turns between players which is automated. It is a null predicate without any arguments.
 
-{% include note.html content="Change and Interact are predicates which indicate what stage should be running. Since Ceptre consumes the predicates, it allows the stage to transition as no other rules in the same stage can fire. Interact predicate is used to force the turn stage to only allow a single rule, and the change predicate is used to prevent the automated turn rotation from becoming an infinite loop." %}
+{% include note.html content="Change and Interact are predicates that indicate what stage should be running. Since Ceptre consumes the predicates, it allows the stage to transition as no other rules in the same stage can fire. Interact predicate is used to force the turn stage to only allow a single rule, and the change predicate is used to prevent the automated turn rotation from becoming an infinite loop." %}
 
-Cepter text based code:
+Ceptre text-based code:
 ```
 hand players card : pred.
 at players cities : pred.
@@ -112,20 +112,20 @@ interact : pred.
 change : pred.
 ```
 
-<!---Cepter Web Editor simulation :
+<!---Ceptre Web Editor simulation :
 
 <video width = "650" controls>
     <source src = "https://user-images.githubusercontent.com/42487202/146036370-e4f196f1-d62a-4bd6-a3f5-dfb8e9925b85.mov">
 </video>-->
 
 ## Add Stages
-We have modularized this example into 2 stages i.e. `turn` and `playershift`. Learn more about Stages and their syntax [here](Stages_Interactivity.html). We will add rules for each stage which will define how our game world interacts with its predicates and types. Learn more about Rules and their syntax [here](Rules.html).
+We have modularized this example into 2 stages i.e. `turn` and `playershift`. Learn more about Stages and their syntax [here](Stages_Interactivity.html). We will add rules for each stage that will define how our game world interacts with its predicates and types. Learn more about Rules and their syntax [here](Rules.html).
 <br>
-{% include note.html content="For each rule, we require certain pre-conditions, which when fulfilled generates the defined effects when that rule is fired. Both the pre-conditions (LHS) as well the added effects (RHS) comprises the predicates we have defined before. As we define our rules, we will see that on application of the rule the initial state is changed to new. If we want to sustain objects in LHS of the rule we will have to explicitly mention it in RHS which implies that the new state contains that element. We imitate similar concept in web editor with the help of 'Remove' checkbox. By default, the web editor sustain everything from LHS to RHS but if we want something to not be present in our new state we can check the 'Remove' box which ensures the removal of that particular object from new state after the rule is fired." %}
+{% include note.html content="For each rule, we require certain pre-conditions, which when fulfilled generate the defined effects when that rule is fired. Both the pre-conditions (LHS) as well the added effects (RHS) comprise the predicates we have defined before. As we define our rules, we will see that on the application of the rule the initial state is changed to new. If we want to sustain objects in the LHS of the rule we will have to explicitly mention it in RHS which implies that the new state contains that element. We imitate a similar concept in the web editor with the help of the 'Remove' checkbox. By default, the web editor sustains everything from LHS to RHS but if we want something to not be present in our new state we can check the 'Remove' box which ensures the removal of that particular object from the new state after the rule is fired." %}
 
-We define stage `turn` having below-mentioned rules. These rules are meant to be applied when it is a specific players turn. We define another stage which governs how the players will change their turns.
+We define stage `turn` as having the below-mentioned rules. These rules are meant to be applied when it is a specific player's turn. We define another stage that governs how the players will change their turns.
 
-1. `drive` - This rule governs the driving capability of player. Player will be able to drive to a new city given that the city they want to drive to is adjacent to current city. Assume that player `P` is located at city `C` and on their turn wants to drive to city `C'` which is adjacent to city `C`. When this rule is fired, player `P` loses its turn and is driven to city C'. Note that city C and C' still remains adjacent to each other.
+1. `drive` - This rule governs the driving capability of the player. The player will be able to drive to a new city given that the city they want to drive to is adjacent to the current city. Assume that player `P` is located at city `C` and on their turn wants to drive to city `C'` which is adjacent to city `C`. When this rule is fired, player `P` loses its turn and is driven to city C'. Note that city C and C' remains adjacent to each other.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -133,7 +133,7 @@ We define stage `turn` having below-mentioned rules. These rules are meant to be
     | at P C               | at P C'             |
     | adjacent C C'        | adjacent C C'       |
 
-2. `build` - This rule defines how to build a research center in a city. To build a research center in a particular city, player should be located at that city and should possess city card corresponding to that city in their hand. Once the research center is built in that city, player will no longer possess that city card in their hand hence we need to remove it from RHS.
+2. `build` - This rule defines how to build a research center in a city. To build a research center in a particular city, the player should be located in that city and should possess a city card corresponding to that city in their hand. Once the research center is built in that city, the player will no longer possess that city card in their hand hence we need to remove it from RHS.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -143,7 +143,7 @@ We define stage `turn` having below-mentioned rules. These rules are meant to be
     | city_card City Card  | city_card City Card |
     |  -                   | research_center City|
 
-3. `fly` - This rule flies the player from one city to the city whose card player possess in their hand. Player `P` can fly from their current location `C` to location `C'` when they possess a city card of location `C'`. When this rule fires, player will be relocated to city `C'` and will no longer possess the city card in their hand.
+3. `fly` - This rule flies the player from one city to the city whose card player possess in their hand. Player `P` can fly from their current location `C` to location `C'` when they possess a city card of location `C'`. When this rule fires, the player will be relocated to city `C'` and will no longer possess the city card in their hand.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -153,7 +153,7 @@ We define stage `turn` having below-mentioned rules. These rules are meant to be
     | city_card C' Card    | city_card C' Card   |
 
 
-4. `treat` - This rule treats the city suffering from disease. Player `P` can treat disease in the city `C` where they are located there. When this rule fires, city will no longer have disease and player will still be at that location.
+4. `treat` - This rule treats the city suffering from a disease. Player `P` can treat disease in city `C` where they are located there. When this rule fires, the city will no longer have the disease, and the player will still be at that location.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -166,9 +166,9 @@ We define stage `turn` having below-mentioned rules. These rules are meant to be
     <source src = "https://user-images.githubusercontent.com/42487202/146051234-5d74ecd7-62f6-44ad-a2ab-947c3e8800bf.mov">
 </video>-->
 
-We define stage `playershift` having below-mentioned rules. These rules are required to change the turns between players.
+We define stage `playershift` as having the below-mentioned rules. These rules are required to change the turns between players.
 
-1. `papb` - This rule changes the turn from player a to player b.
+1. `papb` - This rule changes the turn from the player a to player b.
 
     | LHS (Pre-conditions) | RHS (Added Effects) |
     | -------------------- | ------------------- | 
@@ -219,7 +219,7 @@ qui * stage playershift -o stage turn * interact.
 
 ## Initial State
 
-The Initial State is the state of execution your program will begin in. We will define initial game map with adjacent predicate by specifying which cities are adjacent to each other. Similarly, we will be putting all the players in their place, and initialize the game configuration with their turns and status of cards in their hand. 
+The Initial State is the state of execution your program will begin in. We will define the initial game map with adjacent predicate by specifying which cities are adjacent to each other. Similarly, we will be putting all the players in their place, and initialize the game configuration with their turns and status of cards in their hands. 
 
 <!---Ceptre Web editor simulation: 
 <video width = "650" controls>
@@ -229,7 +229,7 @@ The Initial State is the state of execution your program will begin in. We will 
 
 
 
-Ceptre text base code:
+Ceptre text-base code:
 
 ```
 context init = {
@@ -262,7 +262,7 @@ context init = {
 </video>-->
 
 ## Execution
-To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin Pandemic.cep`. The complete code for Pandemic is as follows:
+To run the text-based version of the program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin Pandemic.cep`. The complete code for Pandemic is as follows:
 
 ```
 cities : type.

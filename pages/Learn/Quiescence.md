@@ -23,7 +23,7 @@ Where [* ...] is meta-syntax denoting any additional tensored-together resources
 
 ## Example
 
-Let's take an example where there are two stages i.e. act and react. The `act` stage comprises user selected rules whereas `react` stage comprises involuntary reactive rules. We can use `qui` construct to transition from stage act into stage react and vice versa.
+Let's take an example where there are two stages i.e. act and react. The `act` stage comprises user-selected rules whereas `react` stage comprises involuntary reactive rules. We can use `qui` construct to transition from stage act into stage react and vice versa.
 
 ```
 stage act = {
@@ -36,6 +36,6 @@ stage react = {
 qui * stage react -o stage act.
 ```
 
-In the above example user-selected rules are the ones user can choose while the ceptre program is interacting with user whereas the reactive rules are the ones user have no control on and system takes care of executing it.
+In the above example, user-selected rules are the ones user can choose while the ceptre program is interacting with the user whereas the reactive rules are the ones user has no control on and the system takes care of executing it.
 
 {% include note.html content="`%` denotes single line comment in ceptre" %}
