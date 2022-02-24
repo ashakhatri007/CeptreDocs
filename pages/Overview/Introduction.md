@@ -8,7 +8,7 @@ summary: These brief instructions will help you get introduced to the ceptre. Th
 ## What is Ceptre?
 
 Ceptre is a *linear logic programming language* created by [Chris
-Martens](https://sites.google.com/ncsu.edu/cmartens). It can be used to specify evolving
+Martens](https://sites.google.com/ncsu.edu/cmartens){:target="_blank"}. It can be used to specify evolving
 systems with lots of independent parts concisely. Ceptre is a rule-based specification language that uses
 logic to represent the rules of a system. A Ceptre program
 represents system states (configurations) as multisets of logical
@@ -29,7 +29,7 @@ that part of the state with `d` and `e`.
 
 ## Medium of Usage
 
-There are two mediums of using ceptre viz Command Line tools and Web Editor. Refer to [Ceptre Command Line](/CeptreTextBased.html) and [Ceptre Web Editor](/CeptreWebEditor.html) Hello world programs to get your development environment ready. It should be noted that Ceptre Web Editor provides a subset of functionality compared to command-line tools. If you are someone who is programming at an advanced level we recommend using ceptre command-line tools whereas if you are someone who is just exploring and want to get started then Web editor will be your best bet!
+There are two mediums of using ceptre viz Command Line tools and Web Editor. Refer to [Ceptre Command Line](/CeptreTextBased.html) and [Ceptre Web Editor](/CeptreWebEditorBased.html) Hello world programs to get your development environment ready. It should be noted that Ceptre Web Editor provides a subset of functionality compared to command-line tools. If you are someone who is programming at an advanced level we recommend using ceptre command-line tools whereas if you are someone who is just exploring and want to get started then Web editor will be your best bet!
 
 ![Ceptre2Mediums](https://user-images.githubusercontent.com/42487202/153968077-7cccaa02-4348-48db-b10f-23853f54b7bb.png)
 

@@ -7,7 +7,7 @@ folder: Overview
 ---
 
 ## Accessing Ceptre Web Editor
-Ceptre web editor can be accessed [here](CeptreWebEditor.html)
+Ceptre web editor can be accessed [here](CeptreWebEditor.html){:target="_blank"}
 
 ## Writing a Hello World Program
 

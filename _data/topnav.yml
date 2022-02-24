@@ -6,6 +6,6 @@ topnav:
   - title: Documentation 
     url: /Introduction
   - title: Web Editor
-    url: /CeptreWebEditor.html
+    external_url: /CeptreWebEditor.html
 
 # Copyright 2021 Google LLC

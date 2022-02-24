@@ -56,7 +56,7 @@ move : at P L * adjacent L L' -o at P L'
 
 The above mechanics essentially mean that we have 2 types of objects i.e. player and location. We define 2 predicates i.e. 'at' (denoting players' current location) and 'adjacent' (denoting adjacency between locations). Using these types and predicates we define a rule which moves any player `P` located at `L` to location `L'` only when locations `L` and `L'` are adjacent to each other. The game map defining the initial adjacent locations and player positions will be part of [GameState](GameState.html)
 
-{% include note.html content="In the Ceptre web editor, when we define any rule everything that is present in LHS is essentially retained to RHS hence we click the remove checkbox if we want to remove a specific predicate in the resulting state when that rule is fired. However, in Ceptre command line tools there is no such default retention of predicates from LHS to RHS, so the predicates in RHS are only present in the resultant state." %}
+{% include note.html content="In the Ceptre web editor, when we define any rule everything that is present in LHS is essentially retained to RHS hence we click the remove checkbox if we want to remove a specific predicate in the resulting state when that rule is fired. However, in Ceptre command line tools you can mimic the default retention of predicates from LHS to RHS by using `$` sign. For example in `A * B -o C * B`, B is retained from LHS to RHS, better way to do this is appending `$` sign, i.e. `A * $B -o C`" %}
 
 Ceptre Web Editor Simulation:
 <video width = "650" controls>
