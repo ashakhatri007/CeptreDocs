@@ -8,7 +8,7 @@ folder: Learn
 
 ## Definition
 
-In simple terms, 'Stage' can be thought of as named collection of [Rules](Rules.html). Stages help to structure the ceptre program into independent components. This collection of rules i.e, stages can be executed automatically (non-deterministically) or by interaction (deterministically), with or without initial context. If you are using Ceptre command line tools you can define multiple stages however, currently [Ceptre web editor](CeptreWebEditor.html) supports only one stage. 
+In simple terms, 'Stage' can be thought of as a named collection of [Rules](Rules.html). Stages help to structure the ceptre program into independent components. This collection of rules i.e, stages can be executed automatically (non-deterministically) or by interaction (deterministically), with or without initial context. If you are using Ceptre command-line tools you can define multiple stages however, currently [Ceptre web editor](CeptreWebEditor.html) supports only one stage. 
 
 ## Syntax
 
@@ -24,13 +24,13 @@ stage stage_name = {
 }
 ```
 
-{% include note.html content="Here 'stage_name' can be replaced by any name that programmer wants to use. The Web Editor supports just one stage, if you would like to use multiple stages in your ceptre program, we recommend using command line tools." %}
-The syntax for adding interaction is to wrap all the rules in a stage, then add a `#interactive` directive. Similarly, for the stage that requires an initial state and an initial context we use a `#trace _` directive.
+{% include note.html content="Here 'stage_name' can be replaced by any name that the programmer wants to use. The Web Editor supports just one stage, if you would like to use multiple stages in your ceptre program, we recommend using command-line tools." %}
+The syntax for adding interaction is to wrap all the rules in a stage, then add a `#interactive` directive. Similarly, for the stage that requires an initial state and an initial context, we use a `#trace _` directive.
 
 
 ## Example
 
-Let's take a simple example where we want to define a rule where a player1 is at location `a` and want to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. The initial position of player1 is at location `b` and location `b` is adjacent to location `a`. For this statement, we define the game mechanics as follows:
+Let's take a simple example where we want to define a rule where player1 is at the location `a` and wants to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. The initial position of player1 is at location `b` and location `b` is adjacent to location `a`. For this statement, we define the game mechanics as follows:
 
 ***Types***
 ```
@@ -45,19 +45,19 @@ b : location.
 
 ***Predicates***
 ```
-at player location : pred
-adjacent location location : pred
+at player location : pred.
+adjacent location location : pred.
 ```
 
 ***Rules***
 ```
-move : at P L * adjacent L L' -o at P L'
+move : at P L * adjacent L L' -o at P L'.
 ```
 
 ***Stages - Interactive***
 ```
 stage all_rules = {
-    move : at P L * adjacent L L' -o at P L'
+    move : at P L * adjacent L L' -o at P L'.
 }
 #interactive all_rules.
 ```
@@ -75,7 +75,7 @@ context init = {
 ```
 #trace _ all_rules init.
 ```
-{% include note.html content="In trace directive example we use the initial context `init` defined above in Initial state" %}
+{% include note.html content="In the trace directive example we use the initial context `init` defined above in the initial state" %}
 
 Ceptre Web Editor Simulation:
 <video width = "650" controls>

@@ -42,7 +42,7 @@ These are two examples of binary predicates. Note that the parameters don’t ha
 specific order, as long as the order is consistent throughout the program. However, it is helpful to 
 have parameters in the order they would be in when the predicate is read in natural language. For 
 example, the first predicate above could be straightforwardly read as “`player` is `at` `location`”. 
-The second could be read as “first `location` is `adjacent` to second `location`”.
+The second could be read as “first `location` is `adjacent` to the second `location`”.
 ```
 at player location : pred.
 adjacent location location : pred.

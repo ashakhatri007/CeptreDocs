@@ -8,12 +8,12 @@ folder: Overview
 ---
 
 ## Installing Ceptre
-You can download the Ceptre command line tool for Windows, macOS, or Linux 
+You can download the Ceptre command-line tool for Windows, macOS, or Linux 
 [here](https://drive.google.com/drive/folders/0B6BJA78gViuAN3A0WlVkdXBjMk0?resourcekey=0-6HEBxccnrhn8TsEdxGiLiA&usp=sharing). For OSx-based systems, you will have to set appropriate permissions for binary to run.
 
 ## Writing a Hello World Program
 The “Hello World” example of Ceptre (i.e. the smallest complete, runnable program with nontrivial 
-behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply simple rule of replacing `a` with `b`.
+behavior) is a program with two predicates and a single rule. We simulate a behavior wherein we apply the simple rule of replacing `a` with `b`.
 
 Start by creating a new text file called `HelloWorld.cep`. Add these lines to the file:
 ```
@@ -49,6 +49,21 @@ as the initial state. The first argument is the limit to the number of rules tha
 ## Running a Hello World Program
 To run the program, run the executable with the name of your Ceptre file as an argument. For example:`./ceptre-bin HelloWorld.cep`.
 
+The complete code for the Hello world program is as below:
+```
+a : pred.
+b : pred.
+
+stage main = {
+  rule : a -o b.
+}
+#interactive main.
+
+context init = {
+    a, a, a
+}
+#trace _ main init.
+```
 The exact name of the executable will depend on your operating system. You should see something 
 like the following:
 ```
@@ -75,8 +90,8 @@ we call a *transition*. But we only have one rule in our program, so how can it 
 choices for what to do?
 
 The answer is that we started with an initial state containing *three instances* of the predicate 
-`a`, and each of those instances is considered distinct. So there really are three possibilities for how 
-the rule may fire, corresponding to *which* of the three `a`s is to be replaced.
+`a`, and each of those instances are considered distinct. So there really are three possibilities for how 
+the rule may fire, corresponding to *which* of the three `a`'s is to be replaced.
 
 `?-` is our prompt to act. Enter `1`, `2`, or `3`. Now you should see:
 ```
@@ -86,7 +101,7 @@ the rule may fire, corresponding to *which* of the three `a`s is to be replaced.
 ?-
 ```
 
-Since there are now only two instances of `a` in our state, there are only two instances of 
+Since there are now only two instances of `a`'s in our state, there are only two instances of 
 `rule` we can fire. Keep firing `rule` until there are no instances left to fire. Then you’ll see:
 ```
 Final state:

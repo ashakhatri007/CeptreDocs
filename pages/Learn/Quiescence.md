@@ -8,13 +8,13 @@ folder: Learn
 
 ## Definition
 
-"Quiescence" is a stage in ceptre program where no more rules are able to fire, at which point control may be transferred to another stage.
+"Quiescence" is a stage in the ceptre program where no more rules can fire, at which point control may be transferred to another stage.
 
 ## Syntax
 
 We use `qui` construct which is a special token denoting quiescence of the program. There are 2 ways we define rules in ceptre program viz inside and outside [stages](/Stages_Interactivity.html). The rules defined outside stages are called outer-level rules. All outer-level rules must have this form: upon quiescence, replace one stage resource with another.
 
-The basic syntax for defining quiescence goes in below manner:
+The basic syntax for defining quiescence goes in the below manner:
 ```
 qui * stage S [* ...] -o stage S’ [* ...].
 ```
