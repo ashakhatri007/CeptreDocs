@@ -23,15 +23,14 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /index.html
+      url: /Introduction.html
       output: web, pdf
-      type: homepage
 
-    - title: Ceptre Text based
+    - title: Ceptre Command Line - Hello world!
       url: /CeptreTextBased.html
       output: web, pdf
 
-    - title: Ceptre Web Editor based
+    - title: Ceptre Web Editor - Hello world!
       url: /CeptreWebEditorBased.html
       output: web, pdf
 
@@ -65,23 +64,15 @@ entries:
 
     - title: Game state
       url: /GameState.html
-      output: web, pdf
-
-  - title: Ceptre Web Editor
-    output: web, pdf
-    folderitems:
-
-    - title: Try Ceptre Web Editor
-      url: /CeptreWebEditor.html
-      output: web, pdf
+      output: web, pdf 
 
   - title: Examples
     output: web, pdf
     folderitems:
 
-    - title: Escape the Castle
-      url: /Freedom.html
-      output: web, pdf
+   # - title: Escape the Castle
+    #  url: /Freedom.html
+    #  output: web, pdf
 
     - title: Blocks world
       url: /BlocksWorld.html
@@ -91,37 +82,37 @@ entries:
       url: /Pandemic.html
       output: web, pdf
 
-  - title: Theory
-    output: web, pdf
+  #- title: Theory
+   # output: web, pdf
 
-    folderitems:
-    - title: Formal definitions
-      url: /FormalDefinitions.html
-      output: web, pdf
+    #folderitems:
+    #- title: Formal definitions
+     # url: /FormalDefinitions.html
+     # output: web, pdf
 
-    - title: Multisets
-      url: /Multisets.html
-      output: web, pdf
+    #- title: Multisets
+     # url: /Multisets.html
+     # output: web, pdf
 
-    - title: Game mechanics
-      url: /GameMechanics.html
-      output: web, pdf
+    #- title: Game mechanics
+     # url: /GameMechanics.html
+     # output: web, pdf
 
-    - title: Transitions
-      url: /Transitions.html
-      output: web, pdf
+    #- title: Transitions
+    #  url: /Transitions.html
+    # output: web, pdf
 
-    - title: Execution trace
-      url: /ExecutionTrace.html
-      output: web, pdf
+    #- title: Execution trace
+    #  url: /ExecutionTrace.html
+    #  output: web, pdf
 
-    - title: Term quantification
-      url: /TermQuantification.html
-      output: web, pdf
+    #- title: Term quantification
+     # url: /TermQuantification.html
+     # output: web, pdf
 
-    - title: Substitution
-      url: /Substitution.html
-      output: web, pdf
+    #- title: Substitution
+     # url: /Substitution.html
+     # output: web, pdf
     
   - title: Publications
     output: web, pdf
@@ -139,9 +130,9 @@ entries:
       url: /People.html
       output: web, pdf
 
-    - title: Survey
-      url: /Survey.html
-      output: web, pdf
+    #- title: Survey
+     # url: /Survey.html
+     # output: web, pdf
 
    
 

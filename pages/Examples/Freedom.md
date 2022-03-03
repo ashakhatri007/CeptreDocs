@@ -1,8 +1,6 @@
 ---
 title: Escape the Castle
-tags: [getting_started, troubleshooting]
-keywords:
-summary: "Escape the castle is a video game whose mechaics we will define using Ceptre."
+summary: "Escape the castle is a video game whose mechanics we will define using Ceptre."
 sidebar: mydoc_sidebar
 permalink: Freedom.html
 folder: Examples
@@ -251,6 +249,7 @@ leave_secret_room : locked thomas secret_room -o at thomas master_bedroom * ().
 leave_creepy_house : at thomas main_room * equip metal_key thomas -o equip metal_key thomas * at thomas road_home * ().
 
 }
+#interactive main
 
 ```
 
@@ -327,6 +326,7 @@ context init =
     locked thomas dungeon,
     locked metal_key dungeon
 }
+#trace _ main init
 
 ```
 Ceptre Web editor simulation: 
@@ -338,6 +338,9 @@ Ceptre Web editor simulation:
 
 Now we can finally start our prototype and see if it works.
 The first thing we need to do is click on "Start Execution", because otherwise the fireable rules won't appear in the box in the Execution tab.
+<br>
+To run the text-based version of program, run the executable with the name of your Ceptre file as an argument. For example:
+`./ceptre-bin Escape.cep`
 
 Once we start the execution, we will also be able to see the atoms that we coded before in the States box.
 

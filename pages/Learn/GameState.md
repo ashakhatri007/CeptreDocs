@@ -1,7 +1,5 @@
 ---
 title: Game State
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - Game State"
 sidebar: mydoc_sidebar
 permalink: GameState.html
@@ -9,11 +7,11 @@ folder: Learn
 ---
 
 ## Definition
-"Game State" in ceptre refers to the state of gaming system. Programmer can initialize the game with initial state and then the state of game progresses through various states according to the order in which rules are fired.
+"Game State" in ceptre refers to the state of the gaming system. Programmer can initialize the game with the initial state and then the state of the game progresses through various states according to the order in which rules are fired.
 
 ## Syntax
 
-We define the initial state of game comprising game map and game configuration in `context` construct. The stages that use `#trace _` directive requires a mandatory initial context parameter.
+We define the initial state of the game comprising the game map and game configuration in `context` construct. The stages that use the `#trace _` directive requires a mandatory initial context parameter.
 
 The basic syntax for defining initial state goes in below manner:
 
@@ -25,13 +23,13 @@ context context_name{
     .
     .
     predicateN
-}
+}.
 ```
-{% include note.html content="Here ‘context_name’ can be replaced by any name that programmer wants to use" %}
+{% include note.html content="Here ‘context_name’ can be replaced by any name that the programmer wants to use" %}
 
 ## Example
 
-Let's take a simple example where we want to define a rule where a player1 is at location `a` and want to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. The initial position of player1 is at location `b` and location `b` is adjacent to location `a`. For this statement, we define the game mechanics as follows:
+Let's take a simple example where we want to define a rule where player1 is at the location `a` and wants to move at location `b` should be able to move only when locations `a` and `b` are adjacent to each other. The initial position of player1 is at location `b` and location `b` is adjacent to location `a`. For this statement, we define the game mechanics as follows:
 
 ***Types***
 ```
@@ -46,13 +44,13 @@ b : location.
 
 ***Predicates***
 ```
-at player location : pred
-adjacent location location : pred
+at player location : pred.
+adjacent location location : pred.
 ```
 
 ***Rules***
 ```
-move : at P L * adjacent L L' -o at P L'
+move : at P L * adjacent L L' -o at P L'.
 ```
 
 ***Initial State***
@@ -67,7 +65,7 @@ context init = {
 
 ```
 stage all_rules = {
-    move : at P L * adjacent L L' -o at P L'
+    move : at P L * adjacent L L' -o at P L'.
 }
 #trace _ all_rules init.
 ```

@@ -1,7 +1,5 @@
 ---
 title: Backward-Chaining Predicates
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - 
 Backward-Chaining Predicates"
 sidebar: mydoc_sidebar
@@ -12,16 +10,16 @@ folder: Learn
 ## Definition
 *Backward-chaining* predicates represent persistent facts about the simulation. Backward chaining 
 predicates are accompanied by a set of rules for when that predicate holds. When a backward-chaining
-predicate appears as the condition of a rule, Ceptre will search backwards from that condition 
-through those rules and try to find a proof of it.
+predicate appears as the condition of a rule, Ceptre will search backward from that condition 
+through those rules and try to find proof of it.
 
 For example, we can define natural number addition as follows:
 - Zero plus any number equals that number
 - For natural numbers `m`, `n`, and `p`, if `m + n = p`, then `succ(m) + n = succ(p)`
 
-To find a proof that `x + y = z`, Ceptre will try to find numbers `m`, `n`, and `p` such that the 
+To find proof that `x + y = z`, Ceptre will try to find numbers `m`, `n`, and `p` such that the 
 successor of `m` is `x`, the successor of `p` is `z`, and `m + n = p`. It continues to search 
-backwards until it reaches the base case `0 + n = n`. We can prove 2+2=4 as such:
+backward until it reaches the base case `0 + n = n`. We can prove 2+2=4 as such:
 1. 2+2=4 if 1+2=3
 2. 1+2=3 if 0+2=2
 3. 0+2=2 by definition
@@ -48,7 +46,7 @@ and then some identifier. For example, our rules for addition could be named `pl
 because they concern zero and the successor function, respectively.
 
 ## Example
-This is the addition example we mentioned above written in Ceptre:
+This is the 'addition' example we mentioned above written in Ceptre:
 ```
 plus nat nat nat : bwd.
 plus/z : plus z N N.

@@ -1,7 +1,5 @@
 ---
 title: Types and Terms
-tags: [getting_started, troubleshooting]
-keywords:
 summary: "In this page we introduce to basic programming constructs for ceptre language - Types 
 and Terms"
 sidebar: mydoc_sidebar
@@ -18,7 +16,7 @@ inductively. For example, the natural numbers can be defined as consisting of ze
 of any natural number.
 
 Note that the Ceptre web editor *only* supports simple terms. Thus, types must be defined by 
-exhaustively listing the terms; the web editor refers to types defined in this way as *sets*.
+exhaustively listing the terms; the web editor refers to types defined in this way as `sets`.
 
 ## Syntax
 Types and terms are defined as follows:
