@@ -935,6 +935,10 @@ span.soft {
         max-height: 700px;
     }
 }
+img.photo {
+    max-width: 350px;
+    max-height: 400px;
+  }
 
 *:hover > .anchorjs-link {
     transition: color .25s linear;

@@ -1,24 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-.people {
-  zoom: 50%;
-}
-
-.column {
+th > img {
   float: left;
-  width: 40%;
-  padding: 20px;
+  border: 2px solid black;
+  margin: 3%;
 }
 
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+img.photo {
+  width: 350px;
+  height: 400px;
 }
-.caption {
-  padding: 0px;
-  display: block;
-  font-size: large;
-}
+
+
